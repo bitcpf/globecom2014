@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.4)
+The top-level auxiliary file: mbmeasurement.aux
+The style file: IEEEtran.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: mbmeasurement.bib
+Warning--string name "april" is undefined
+--line 1774 of file mbmeasurement.bib
+Warning--string name "april" is undefined
+--line 1781 of file mbmeasurement.bib
+Warning--string name "july" is undefined
+--line 2358 of file mbmeasurement.bib
+-- IEEEtran.bst version 1.00 (2002/08/13) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in friis
+
+Done.
+You've used 31 entries,
+            3917 wiz_defined-function locations,
+            946 strings with 11553 characters,
+and the built_in function-call counts, 19431 in all, are:
+= -- 1534
+> -- 442
+< -- 144
++ -- 240
+- -- 78
+* -- 907
+:= -- 3008
+add.period$ -- 64
+call.type$ -- 31
+change.case$ -- 28
+chr.to.int$ -- 318
+cite$ -- 32
+duplicate$ -- 1485
+empty$ -- 1654
+format.name$ -- 97
+if$ -- 4437
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 270
+newline$ -- 113
+num.names$ -- 26
+pop$ -- 651
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1492
+stack$ -- 0
+substring$ -- 769
+swap$ -- 1123
+text.length$ -- 38
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 0
+warning$ -- 1
+while$ -- 81
+width$ -- 33
+write$ -- 296
+(There were 4 warnings)

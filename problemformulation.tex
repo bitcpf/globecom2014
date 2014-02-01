@@ -1,0 +1,287 @@
+\section{Problem Formulation}
+\label{sec:problemformulation}
+
+In this section, we formulate the problem of band selection in wireless 
+mesh network deployment jointly using WiFi and white space bands. 
+We first illustrate the challenges of band selection
+in deploying wireless network. Then we discuss the minimum number of access
+ points in deploying wireless mesh network. Finally, we present 
+measurement driven estimation model used to address the problem. 
+ 
+\subsection{White Space Opportunity and Challenge}
+\label{subsec:motivation}
+
+%A node in ~\emph{Multiband Wireless Mesh Network} has limited multiple slots for installing radios working in different bands. 
+%Two nodes share the same link should have a common channel. The sum of the loads on the links should 
+% Explain propagation, factors of the environment and so on
+Today, wireless signals exist everywhere in the world and all over the frequency bands.
+When talking about wireless communication, the interference of existed signals
+ have to be considered as an important part for the conversition.
+ Such as yielding primary users is a key issue in cognitive radio~\cite{haykin2005cognitive}.
+ Researchers have put many efforts in developing algorithms a series of issues in wireless network,
+  for instance gateway placement, channel assignment~\cite{he2008optimizing,tang2005interference}.
+These works assume the channels are clean for deploying new network which unfortunitely is not true.
+
+Wireless propagation is the behavior of the signal loss characteristics 
+when wireless signals are transmitted from a transmitter to receiver.
+The strength of the receiving signal depends on both the line-of-sight
+path (or lack thereof) and multiple other paths that are a result of 
+reflection, diffraction, and scattering from obstacles in the 
+environment~\cite{andersen1995propagation}. The widely-used, Friis
+equation characterizes the power of the received signal $P_r$ in terms 
+of the power $P_t$ and gain $G_t$ of the transmitting signal, gain of 
+the receiver $G_r$, wavelength $\lambda$ of the carrier frequency, 
+distance $R$ from transmitter to receiver, and path loss exponent $n$ according 
+to~\cite{friis}:
+\begin{equation}
+\label{eq:friis}
+P_r=P_t+G_t+G_r+10n \log_{10}\left( \frac{\lambda}{4\pi R}\right)
+\end{equation}
+Here, the path loss exponent $n$ changes according to the
+aforementioned environmental factors and ranges from 2 to 5 in typical
+outdoor settings~\cite{rappaport}.
+
+% Explain multiband and activity level
+Since the channel separation is relatively small (e.g., 22 MHz for 
+the 2.4 GHz band), many works assume the propagation of these channels are the same.
+The works rely on such an assumption have focused on the 
+allocation of multiple WiFi channels with multiple radios in 
+multihop wireless networks and provide solution for intra-network interference~\cite{si2010overview}. 
+Here, a frequency band is defined as a group of channels which have
+similar propagation characteristics.
+Moreover, the activities in multiple bands vary from downtown area 
+to rural area, such as more activities of WiFi bands 
+than white space frequencies in downtown area, and rural area, 
+more white space band activities than WiFi activities. 
+This character brings more options for band selection in WiFi and white space.
+In this work, we consider the diverse propagation and activity characteristics
+for four total frequency bands: 450 MHz, 800 MHz, 2.4 GHz, and 5.2 GHz.
+The two former frequency bands, we refer to as white space (WS) bands whereas
+the two latter frequency bands, we refer to as WiFi bands.
+
+
+% Network Constraint
+There are several constraints for wireless mesh network deployment. For backhual tier 
+connectivity constraint require all access points can be connected to gateway.
+When gateway locations are unknown or not yet selected, the possible gateways need
+to cover all the area with a coverage constraint. We assume the coverage
+constratint is $95\%$~\cite{robinson2010deploying}. 
+Moreover, wireless bandwidth is shared amongst all clients, which is desirable to 
+limit the number of potential shares of the scarce wireless spectrum. Spacial reuse 
+helps to improve the capacity constraint. When a gateway is serving an area, it has
+to satisfy the demand of the residents which related to the area type. We hold the 
+residents demand as capacity constraint.
+
+% Make multiband challenges
+Avoiding interference is the primary target in wireless deployment.
+There exist two kinds of interference for wireless network. The first kind 
+is the {\it Inter-network interference} comes from existing wireless devices.
+The second interference is {\it Intra-network interference} comes from wireless 
+network deployment itself. Previous work focus on resolve the Intra-network 
+interference~\cite{subramanian2008minimum,ramachandran2006interference,si2010overview}.
+Due to the distribution nature of the Inter-network interference,
+it is impossible to have a theoritic model to describe and estimate the activities of existing
+ wireless signals. Measurement is the best and probably the only way to tell the Inter-network
+  interference. The broadcast nature of the wireless medium make greater levels of propagation 
+  induce higher levels of interference, both for Inter-network
+and Intra-network interference. To smart use of WiFi and white space band adapting different 
+demands of rural area and urban areas is a key issue in wireless network. 
+Thus, in sparsely-populated rural areas, the lower frequencies of the white space 
+bands might be a more appropriate choice for wireless service in huge sparse areas. 
+However, as the population and demand scales up (e.g., 
+for more urban regions), the reduced spatial reuse and greater levels of Inter and Intra interference 
+of white space bands might detract from the overall deployment strategy. In 
+such urban areas, select links of greater distance might be the most 
+appropriate choice for white space bands, especially since the number of 
+available channels is often inversely proportional to the population (due 
+to the existence of greater TV channels).
+%The broadcast nature of the wireless medium makes it generate multiple access interference in wireless network.
+%Employing White Space Band in lower frequency brings advantages for mesh network, 1) more orthogonal bandwidth reduce the contention and conflict in the network,
+% 2) the propagation variation brings flexible topology by reducing connection hop counts in the network.
+%However, at the same time, links in White Space Band also increase the interference range in the network making space reuse of the white space band channel difficult. 
+
+
+The distribution of inter-network interference vary in downtown, urban and rural
+area. A drive spectrum measurement is shown in Figure~\ref{dirvetest}.
+We drove through Dallas, Fort Worth, and Weatherford in north Texas~\ref{drivemap}.
+The signal strength of 450 MHz is strong in downtown Dallas, downtown Fort Worth;
+but has less interference in the urban and rural area between these cities.
+The low variation of 5.2 GHz and 2.4 GHz due to the limited transmitting range.
+When we drive in the highway, the distance from our car to the weak signal source of these bands
+is to large to detect these signals. We did more fixed location measurement to quantify
+the spactial distribution. 
+   \begin{figure}
+   %\vspace{-0.0in}
+   \centering
+   \includegraphics[width=74mm]{figures/drivemap}
+   \vspace{-0.1in}
+   \caption{DFW Drive Test Map}                                                                 
+   \label{fig:labact}
+   %\vspace{-0.0in}
+   \end{figure}
+   \begin{figure}
+   %\vspace{-0.0in}
+   \centering
+   \includegraphics[width=74mm]{figures/drivetest}
+   \vspace{-0.1in}
+   \caption{Wireless Activity in Urban Lab}                                                                 
+   \label{fig:labact}
+   %\vspace{-0.0in}
+   \end{figure}
+We define measured percentage activity time in a unit time to 
+quantify the Inter-network interference~\ref{subsec:problem}.
+Figure \ref{fig:labact} depicts an example activity level in our urban lab
+with the plaform introduced in~\ref{sec:experimentdesign}. 
+The interference across varies in time domain. The activity level from data
+collected in the same location shows the difference in time domain.
+The existing signals occupy 25.83 percentage of time in 450 MHz,
+26.49 percentage of time in 800 MHz, 34.95 percentage of time in 
+2.4 GHz and 35.46 of time in 5.2 GHz. The Inter-network interference 
+of these existing signals is what we have to avoid in wireless network
+ deployment. 
+   \begin{figure}
+   %\vspace{-0.0in}
+   \centering
+   \includegraphics[width=74mm]{figures/labactivity}
+   \vspace{-0.1in}
+   \caption{Wireless Activity in Urban Lab}                                                                 
+   \label{fig:labact}
+   %\vspace{-0.0in}
+   \end{figure}
+There is around $10\%$ difference from white space band to WiFi band in 
+our lab. This gap is an opportunity to improve wireless network deployment.
+%To balance the larger communication range and interference range of white space band in mesh network is a key issue in ~\emph{Multiband Mesh Network} from ~\emph{Multiradio} scenario.
+
+\subsection{Model and Problem Formulation}
+\label{subsec:problem}
+
+% Assumptions of the network
+Oppose to previous works, this paper focus on bands adaptation of Inter-network 
+interference and multiple populated areas~\cite{tang2005interference,yuan2006cross
+,si2010overview}. We propose a measurement driven framework to get the lower bound 
+amount of access points for serving a certain area with QoS requirement.
+ We hypothesize that using radios with a greater diversity in propagation could 
+ achieve overall network performance gains.  Therefore, for a given set of radios,
+  we allow the channel choices to come from different frequency bands 
+  (i.e., multiband channel assignment). We assume that all mesh nodes have the same 
+  transmit power, channel bandwidth, and antenna gain.
+Each access point operates with a classic protocol model~\cite{gupta2000capacity}. 
+
+Generally, Internet data request comes with population and Finland government even anounce 
+broadband is an individual 'legal right'~\cite{bbcfinland,rosston2011household}. Providing a community 
+wireless Internet service have to satisfy its traffice demand of multiple population distribution. 
+Figure ~\ref{fig:dfwpopulation} depicts the population distribution of Dallas-Fort Worth 
+metropolitan area. Population increase with red color and decrease with green color in the map.
+In populated urban area, more people need more network capacity in which case WiFi 
+band spatial reuse is better than white space band who limit its capacity in one NIC for the whole area.
+However, in populated urban area, more Inter-network interference comes from existing devices in WiFi
+ bands could reduce the capacity of a spatial reuse WiFi network. 
+ Here we are trying to answer the question in a certain Inter-network interference,
+ what is the band or bands combination we should use to provide network service
+  for a community.
+	  
+   \begin{figure}
+   %\vspace{-0.0in}
+   \centering
+   \includegraphics[width=84mm]{figures/experimentloc}
+   \vspace{-0.1in}
+   \caption{Dallas-Fort Worth Population Distribution}                                                                 
+   \label{fig:dfwpopulation}
+   %\vspace{-0.0in}
+   \end{figure}
+
+Since mathematical fomular is diffcult to describe the activities of signal on the air even in an arbitrary area.
+ We use long term measurement represent the activities in each band is a good
+  estimation. We define the the percentage of sensing samples $S_\theta$ above a 
+  interference threshold $\theta$ over the total samples $S$ in a time unit as the 
+  {\it $Activity Level$} $A$ of Inter-network interference shown in equation~\ref{eq:actdef}
+\begin{equation}
+\label{eq:actdef}
+A=\frac{S_\theta}{S_a}
+\end{equation}
+The capacity of a clean channel is $C$, with protocol model, the capacity of a channel with Inter-network
+ interference $C_r$ could be represented as in equation~\ref{eq:intercap}
+\begin{equation}
+\label{eq:intercap}
+C_r=C*(1-\bar{A})
+\end{equation}
+
+The lower bound of a network deployment is to provide network capacity equal to the demand of the service 
+area. The demand of a service area could be calculated as the summation of individual demand all over 
+the service area $D_a=\sum_{p\in P}D_p$. Since individual or family Internet data demand is marked as government 
+statistics~\cite{rosston2011household}, $D_a$ could be remarked with population distribution $f$ and service area $k$ as 
+$D_a=\sum_{f \in F,k \in K}\bar{D_p}*f*k$. The network deployment lower bound of access point $M$ could be 
+represented in equation~\ref{eq:nlbound}
+
+\begin{equation}
+\label{eq:nlbound}
+\sum_{m \in M}C_r^m \ge \sum_{f \in F,k \in K}\bar{D_p}*f*k
+\end{equation}
+Also, the network has to satisfy the coverage constraint. The access tier provides 
+single-hop connectivity from client devices to a mesh node. 
+Generally a coverage of $95\%$ is good for outdoor mesh network~\cite{robinson2010deploying}.
+
+In multiband scenario, the activity level varies with to different interference source and the propagation
+ characteristics bring the service area variation. The simpliest way to cover an area is to use 
+ multiple orthogonal lower frequency channels, however, FCC limit the white space band utility in 
+ most metro area in US~\cite{googledatabase}. Moreover, channel in each band is limited. 
+ And too many lower frequencies channels will bring  huge Intra-network interference for 
+ the network which is out of our scope. To answer the question given an area for a new network, 
+ at least how many access point or how much funding should be risen, we build the measurement driven
+  framework to approach the lower bound.
+
+
+
+
+% Fix the framework , Mark should use them in a single tower with more radios
+% Framework
+In space domain, the advantage of high frequency channel in network is the spatial reuse, the low
+frequency channel is better in large scale coverage. Generally high frequency fit
+for populated area and lowe freqency fit for sparse area.
+The time domain variation could be seen in Figure~\ref{drivetest}.
+For an ISP, the service quanlity which maps to the capacity constraint has to be satisfied.
+Given an area of metropolitan, the population distribution could be found in 
+government and academy resources~\cite{uscensus}. Then we have the capacity request
+of each part of the area with the assumption everyone has the same internet demand. 
+According to the population distribution, we chop the area into different types.
+These are the space domain input. Then we count the measured activity level as 
+input in time domain. We have an average channel capacity of each band with the 
+activity level. With received signal strength threshold, 
+the QoS coverage area of different type per channel and the reuse distance could be computed. 
+Then the maximum area an access point could cover can be calculated as the minimize 
+area of the QoS coverage area and propagation coverage.
+Then the transmitting power is adjusted to fulfill the coverage restrition. 
+A classic regular hexogan deployment process is employed to put the access points.
+
+
+% Fixme think about the framework
+%\subsection{Measurement Driven Access Point Lower Bound Approaching Framework}
+%\label{subsec:MDLB}
+%
+\begin{algorithm}[t]
+    \small
+\caption{Number of Access Points Estimation}
+\label{algorithms:bps}
+\begin{algorithmic}[1]
+\REQUIRE  ~~\\
+	$A$: Measured Activity Level \\
+	$F$: Population Distribution\\
+	$C$: Clean Channel Capacity\\
+	$n$: Path Loss Exponent \\
+	$B$: Available frequency bands\\
+	$M$: Area need to be covered
+\ENSURE ~~\\    
+$CA$: Lower Bound of Mesh Nodes\\
+\STATE Chop $M$ in to different type, calculate the traffic demand density $f$
+\STATE Calculate in-field channel capacity $C_r$ as $C(1-A)$  
+\STATE Get the propagation coverage area radius $R_p$ from Frii model based on $n,B,F$
+\STATE Calculate the QoS coverage radius $R_{QoS}$ of a Multiband Access Point satisfy the demands of the area
+\STATE The coverage radius of a Multiband Access Point is $Min{R_p,R_{QoS}}$
+\STATE Apply regular hexagon deployment to get the number of access point for serving given area $M$ 
+
+Output The number of Access Points\\
+\end{algorithmic}
+\end{algorithm}
+
+
+
