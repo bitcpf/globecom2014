@@ -1,5 +1,5 @@
 BASE = mbmeasurement
-SRC = mbmeasurement.tex problemformulation.tex wmalgorithms.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex mbmeasurement.bib result.tex
+SRC = mbmeasurement.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex mbmeasurement.bib 
 
 all: $(BASE).ps 
 b: $(BASE).bbl
