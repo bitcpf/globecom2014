@@ -1,11 +1,11 @@
 \section{Experiment and Analysis}
 \label{sec:experimentdesign}
 
-To study spectrum utility in multiple area types, we developed static and driving experiments 
+To study spectrum utility in multiple area types, we developed experiments 
 on off-the-shelf wireless platform and remote controlled spectrum analyzer measurement platform.
 We do measurement in typical areas of DFW metropolitan carrying these platform.
-According to the measured data, we apply our Wireless Mesh Access Points deployment framework to analyze
-the performance of white space band application in typical downtown, urban, rural and intersection areas.
+According to the measured data, we apply our Multiband Access Points Estimation framework to analyze
+the performance of white space band application in typical populated areas.
 
 \subsection{Experiment Design}
 % Platform
@@ -15,8 +15,8 @@ XR2 at 2.4 GHz, XR5 at 5.2 GHz) and a DoodleLabs DL475 radio at 450 MHz~\cite{Ub
 We developed shell script with tcpdump for this testbed working as a sniffer recording all 
 802.11 packets.
 The experiments taken in downtown Dallas, SMU campus, neighborhood show there is no 802.11
-packets sniffed in white space bands. And in DFW area, as far as we know, we are the only 
-group holds FCC license to use white space bands. Our experiments verify that these bands 
+packets dected in white space bands. And in DFW area, as far as we know, we are the only 
+group holds FCC license of white space bands. Our experiments verify that these bands 
 have not been used for wireless data communication.
 However, we observed that Gateworks platform only update its received signal strength when received
 a new packet. It is not good for inter-network interference measurement. To cover the gap, 
@@ -25,13 +25,13 @@ system. There is no mobile multiband antenna in market. We compare the multiband
 and mobile antenna measurement across bands in lab with our controlled signal source.
 Then normalize the received signal strength for mobile antenna measurement.
 
-  Our platforms are shown in Figure~\ref{fig:equipment}.
+Our experiment platforms are shown in Figure~\ref{fig:equipment}.
   \begin{figure}
   %\vspace{-0.0in}
   \centering
   \includegraphics[width=74mm]{figures/equipment}
   \vspace{-0.1in}
-  \caption{Experiment Platform}                                                                 
+  \caption{Multiband Measurement Platform}                                                                 
   \label{fig:equipment}
   %\vspace{-0.0in}
   \end{figure}
@@ -41,12 +41,12 @@ samples are unique through the time stamp. Then we use the uniformed data for ac
  calculation.  
 
 % Location and Process 
-We apply drive test carrying our platform from Dallas to Weatherford as shown in~\ref{sec:problemformation}.
+%We apply drive test carrying our platform from Dallas to Weatherford as shown in~\ref{sec:problemformulation}.
 We choose typical location according to population distribution and free white space bands 
 from Google spectrum database~\cite{googledatabase}. The location chosen for experiments 
-are Dallas, Weatherford and Millsap marked with stars in Figure~\ref{dfwpopulation}.
+are Dallas, Weatherford and Millsap marked with stars in Figure~\ref{fig:drivemap}.
 In Weatherford and Millsap, we monitor wireless activities in 3 location for 45 minutes in 
-static on a normal weekday. The three locations of a city include downtown, neighbor and 
+static on a normal weekday. The three locations of a city include downtown, neighborhood and 
 rural area. In Dallas, we have multiple measurement in neighborhood, campus and sparse density area.
 Then we post-process these data to get the activities level for each band in all the location.
 Moreover, through our framework, the number for covering an arbitrary area is calculated and discussed in~\ref{subsec:result}.
@@ -54,6 +54,7 @@ Moreover, through our framework, the number for covering an arbitrary area is ca
 
 
 \subsection{Results and Analysis} 
+\label{subsec:result}
 
 In table~\ref{tab:activitymeasurement}, we show our measurement results in multiple locations of DFW metro.
 Dallas as the central city of North Texas, has the highest activities in most of the measured bands,
@@ -64,7 +65,7 @@ which bring more activities in 2.4 GHz and 5.2 GHz.
 In Weatherford, all the bands have less activities than Dallas. And due to the measurement location
 we chosen, the rural area we chose on the west of Weatherford where could get more interference from
 Fort Worth.
-Millsap is a typical sparse city in north Texas. The activities across all the bands are lower than
+Millsap is a typical sparse city has 500 residents total in north Texas. The activities across all the bands are lower than
 Dallas, and Weatherford. For 450 MHz, the activity reduce much faster than other bands in Dallas
 and Weatherford. 
 
@@ -91,7 +92,7 @@ Area Type & Downtown & Urban & Sparse Area & Downtown &  Urban   & Sparse Area &
 \vspace{-0.4in}
 \end{table*}    
 
-We put these measured activity level into our framework presented in~\ref{subsec:problem}. We use Millsap
+We put these measured activity level into our framework presented in~\ref{algorithm:mape}. We use Millsap
 sparse area, Millsap downtown, Weatherford urban, Dallas rural and look up the population density on-line.
 We input these information to our framework and calculate the number of access point for covering 
 a $13 km \times 13 km$ area in different types. The output is shown in Figure~\ref{fig:redensity}. 
@@ -101,7 +102,7 @@ a $13 km \times 13 km$ area in different types. The output is shown in Figure~\r
    \centering
    \includegraphics[width=74mm]{figures/redensity}
    \vspace{-0.1in}
-   \caption{Number of Access Points for an Arbitrary Area}                                                                 
+   \caption{Number of Access Points need for 13x13 $km^2$ Area}                                                                 
    \label{fig:redensity}
    %\vspace{-0.0in}
    \end{figure}
@@ -119,7 +120,7 @@ per square kilometer. But as the population density increase, due to the capacit
 people in this area, low frequency white space band lose their advantage of larger communication range. 
 And at the same time, the activities of other signal source, such as TV station in downtown area reduce
 the capacity of white space band, then WiFi+White Space bands perform worse than WiFi only bands combination.
-Moreover, if we count the intra network interference, the situation could be even worse.
+Moreover, if we count the intra-network interference, the situation could be even worse.
 
 
 To find the best bands combination, we select 500 people per square kilometer scenario and use Weatherford 
@@ -148,7 +149,7 @@ used, the better performance will be got.
    \centering
    \includegraphics[width=74mm]{figures/varybandcomb2}
    \vspace{-0.1in}
-   \caption{Bands Combinations of The Same No. of Channels in 1500 Population}                                                                 
+   \caption{Bands Combinations of The Same No. of Channels in 1500 Population} 
    \label{fig:varybandcomb2}
    %\vspace{-0.0in}
    \end{figure}
@@ -157,7 +158,5 @@ We reset the population as 1500. And Dallas urban spectrum activity is used in\r
 In this scenario, using all channels in white space band has the same performance comparing to WiFi+
 White space bands. And generally white space band still have benefit reducing the number of access points
 by 23.33\% and 9.19\%. As population density increase, the gain brought by white space decrease. The best
-band combination is still the combination with white space bands.
-
-
+band combination is still the combination with white space bands. 
 
