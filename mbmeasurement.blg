@@ -15,45 +15,45 @@ Warning--string name "july" is undefined
 Warning--empty journal in friis
 
 Done.
-You've used 31 entries,
+You've used 27 entries,
             3917 wiz_defined-function locations,
-            946 strings with 11553 characters,
-and the built_in function-call counts, 19431 in all, are:
-= -- 1534
-> -- 442
-< -- 144
-+ -- 240
-- -- 78
-* -- 907
-:= -- 3008
-add.period$ -- 64
-call.type$ -- 31
-change.case$ -- 28
-chr.to.int$ -- 318
-cite$ -- 32
-duplicate$ -- 1485
-empty$ -- 1654
-format.name$ -- 97
-if$ -- 4437
+            929 strings with 11126 characters,
+and the built_in function-call counts, 18243 in all, are:
+= -- 1475
+> -- 411
+< -- 155
++ -- 227
+- -- 69
+* -- 867
+:= -- 2806
+add.period$ -- 56
+call.type$ -- 27
+change.case$ -- 25
+chr.to.int$ -- 342
+cite$ -- 28
+duplicate$ -- 1363
+empty$ -- 1468
+format.name$ -- 86
+if$ -- 4165
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 270
-newline$ -- 113
-num.names$ -- 26
-pop$ -- 651
+int.to.str$ -- 27
+missing$ -- 240
+newline$ -- 101
+num.names$ -- 23
+pop$ -- 550
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1492
+skip$ -- 1394
 stack$ -- 0
-substring$ -- 769
-swap$ -- 1123
-text.length$ -- 38
+substring$ -- 822
+swap$ -- 1086
+text.length$ -- 41
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
 warning$ -- 1
-while$ -- 81
-width$ -- 33
-write$ -- 296
+while$ -- 82
+width$ -- 29
+write$ -- 269
 (There were 4 warnings)

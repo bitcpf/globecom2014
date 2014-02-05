@@ -18,30 +18,9 @@
 \fi
 #2}}
 
-\bibitem{pahlavan2011principles}
-K.~Pahlavan, \emph{Principles of wireless networks: A unified approach}.\hskip
-  1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, Inc., 2011.
-
-\bibitem{CRSK06}
-J.~Camp, J.~Robinson, C.~Steger, and E.~Knightly, ``Measurement driven
-  deployment of a two-tier urban mesh access network,'' in \emph{{ACM
-  MobiSys}}, 2006.
-
-\bibitem{google_imc08}
-M.~Afanasyev, T.~Chen, G.~Voelker, and A.~Snoeren, ``Analysis of a mixed-use
-  urban {WiFi} network: When metropolitan becomes neapolitan,'' in \emph{{ACM
-  IMC}}, 2008.
-
-\bibitem{taps}
-R.~Karrer, A.~Sabharwal, and E.~Knightly, ``Enabling large-scale wireless
-  broadband: the case for {TAPs},'' in \emph{{HotNets-II}}, 2003.
-
-\bibitem{cnet_aug07}
-M.~Reardon, ``{EarthLink} pays 5 million to delay houston {Wi-Fi} buildout,''
-  \url{http://news.cnet.com/8301-10784\_3-9768759-7.html}, 2007.
-
-\bibitem{fccwhitespace}
-``Fcc white space,'' \url{http://www.fcc.gov/topic/white-space}, 2012.
+\bibitem{carlson}
+C.~Inc., ``Fcc certifies carlson wireless technologies tv white space radio,''
+  \url{http://www.carlsonwireless.com/rural-connect-press-release.html}, 2014.
 
 \bibitem{balanis2012antenna}
 C.~A. Balanis, \emph{Antenna theory: analysis and design}.\hskip 1em plus 0.5em
@@ -52,20 +31,15 @@ W.~Si, S.~Selvakennedy, and A.~Y. Zomaya, ``An overview of channel assignment
   methods for multi-radio multi-channel wireless mesh networks,'' \emph{Journal
   of Parallel and Distributed Computing}, vol.~70, no.~5, pp. 505--524, 2010.
 
-\bibitem{haykin2005cognitive}
-S.~Haykin, ``Cognitive radio: brain-empowered wireless communications,''
-  \emph{Selected Areas in Communications, IEEE Journal on}, vol.~23, no.~2, pp.
-  201--220, 2005.
-
 \bibitem{he2008optimizing}
 B.~He, B.~Xie, and D.~P. Agrawal, ``Optimizing deployment of internet gateway
   in wireless mesh networks,'' \emph{Computer Communications}, vol.~31, no.~7,
   pp. 1259--1275, 2008.
 
-\bibitem{tang2005interference}
-J.~Tang, G.~Xue, and W.~Zhang, ``Interference-aware topology control and {QoS}
-  routing in multi-channel wireless mesh networks,'' in \emph{{ACM MobiHoc}},
-  2005.
+\bibitem{marina2010topology}
+M.~K. Marina, S.~R. Das, and A.~P. Subramanian, ``A topology control approach
+  for utilizing multiple channels in multi-radio wireless mesh networks,''
+  \emph{Computer Networks}, vol.~54, no.~2, pp. 241--256, 2010.
 
 \bibitem{andersen1995propagation}
 J.~B. Andersen, T.~S. Rappaport, and S.~Yoshida, ``Propagation measurements and
@@ -79,6 +53,16 @@ H.~T. Friis, ``A note on a simple transmission formula,'' vol.~34, no.~5, pp.
 \bibitem{rappaport}
 T.~Rappaport, \emph{Wireless Communications, Principles \& Practice}.\hskip 1em
   plus 0.5em minus 0.4em\relax Prentice Hall, 1996.
+
+\bibitem{haykin2005cognitive}
+S.~Haykin, ``Cognitive radio: brain-empowered wireless communications,''
+  \emph{Selected Areas in Communications, IEEE Journal on}, vol.~23, no.~2, pp.
+  201--220, 2005.
+
+\bibitem{tang2005interference}
+J.~Tang, G.~Xue, and W.~Zhang, ``Interference-aware topology control and {QoS}
+  routing in multi-channel wireless mesh networks,'' in \emph{{ACM MobiHoc}},
+  2005.
 
 \bibitem{robinson2010deploying}
 J.~Robinson, M.~Singh, R.~Swaminathan, and E.~Knightly, ``Deploying mesh nodes
