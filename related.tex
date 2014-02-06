@@ -1,22 +1,28 @@
 \section{Related Work}
 \label{sec:related}
 
-Many efforts have been put in wireless network deployment issues, such as in gateway placement,
- channel assignment, routing and jointly optimization~\cite{he2008optimizing,ramachandran2006interference,akyildiz2006next}.
- These works focus on wireless network issues in WiFi bands and propose many algorithms 
- for the solving these problems.
+% Inter-network vs Intra-network interference
+Many efforts have been put in wireless network deployment in WiFi bands~\cite{he2008optimizing,ramachandran2006interference,akyildiz2006next}.
+These works focus on solving gateway placement, channels assignment, routing 
+problems in wireless network issues to reduce the interference generated inside the network.
+However, wireless interference is not only from a new deployment network but also from the
+existing wireless device. Unfortunately, few of the works in network deployment notice the 
+inter-network interference. There are some cognitive radio works discuss the inter-network
+interference, but most of them focus on point to point communication other than network~\cite{cabric2004implementation}.
 
-However, as FCC regulations have reapportioned spectrum for data networks with white space bands, 
-questions come out for wireless network with these new bands. Two new characters of wireless network
- are brought by white space bands: propagation difference and Inter-network interference.~\cite{cui2013leveraging,bahl2009white}.
- Previous work provide solutions for WiFi network but fails to cover these two factors.
- 
- % White space band research
- White space band application is a new research hot spot. Follow FCC's policy, white space capacity 
- of  continental USA is quantified in~\cite{harrison2010much}. White space is targeting on opportunistic 
-  medium access for data transmission and the opportunity is experimental verified indoor~\cite{obregon2010experimental}.
-  However, the best application of white space is to serve rural area with its long propagation range
-   other than indoor application. Our target is to quantify the opportunity of outdoor backhual network.
+% White Space
+As FCC adopt white space bands for wireless communication, questions come out 
+for wireless network deployment~\cite{fccwhitespace}. The white spaces bring two
+concerns: large propagation range and existing Inter-network interference from 
+TV station and other device~\cite{cui2013leveraging,bahl2009white}.
+Previous works fails to discover the white spaces benefit and drawback in network deployment~\cite{akyildiz2005wireless}.
+
+% FIXME
+Brand new white spaces problems are new research hot spot. Follow FCC's policy, white space capacity 
+of  continental USA is quantified in~\cite{harrison2010much}. White space is targeting on opportunistic 
+medium access for data transmission and the opportunity is experimental verified indoor~\cite{obregon2010experimental}.
+However, the best application of white space is to serve rural area with its long propagation range
+other than indoor application. Our target is to quantify the opportunity of outdoor backhual network.
 
  % Network propagation difference
 There are some works talked about the propagation variation in both WiFi network and white space network.
