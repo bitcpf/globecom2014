@@ -81,10 +81,6 @@ J.~Yuan, Z.~Li, W.~Yu, and B.~Li, ``A cross-layer optimization framework for
 P.~Gupta and P.~R. Kumar, ``The capacity of wireless networks,'' \emph{{IEEE
   Trans. on Information Theory}}, vol.~46, no.~2, pp. 388--404, 2000.
 
-\bibitem{bbcfinland}
-BBC, ``Finland makes broadband a 'legal right','' \emph{BBC News Technology},
-  2010.
-
 \bibitem{rosston2011household}
 G.~Rosston, S.~Savage, and D.~Waldman, ``Household demand for broadband
   internet service,'' \emph{Communications of the ACM}, vol.~54, no.~2, pp.
@@ -95,12 +91,6 @@ G.~Rosston, S.~Savage, and D.~Waldman, ``Household demand for broadband
 
 \bibitem{uscensus}
 ``People and households,'' \url{http://www.census.gov/people/}, 2014.
-
-\bibitem{Gateworks}
-``Cambria gw2358-4 network platform,'' http://www.gateworks.com/, 2007.
-
-\bibitem{Ubnt}
-``Ubiquiti xtremerange series of radio,'' http://www.ubnt.com/, 2012.
 
 \bibitem{usrp}
 E.~Research, ``Usrp n210,''
@@ -144,18 +134,6 @@ P.~Bahl, R.~Chandra, T.~Moscibroda, R.~Murty, and M.~Welsh, ``White space
 \bibitem{akyildiz2005wireless}
 I.~F. Akyildiz, X.~Wang, and W.~Wang, ``Wireless mesh networks: a survey,''
   \emph{Computer networks}, vol.~47, no.~4, pp. 445--487, 2005.
-
-\bibitem{harrison2010much}
-K.~Harrison, S.~M. Mishra, and A.~Sahai, ``How much white-space capacity is
-  there?'' in \emph{New Frontiers in Dynamic Spectrum, 2010 IEEE Symposium
-  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2010, pp. 1--10.
-
-\bibitem{obregon2010experimental}
-E.~Obregon, L.~Shi, J.~Ferrer, and J.~Zander, ``Experimental verification of
-  indoor tv white space opportunity prediction model,'' in \emph{Cognitive
-  Radio Oriented Wireless Networks \& Communications (CROWNCOM), 2010
-  Proceedings of the Fifth International Conference on}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2010, pp. 1--5.
 
 \bibitem{murty2012senseless}
 R.~Murty, R.~Chandra, T.~Moscibroda, and P.~Bahl, ``Senseless: A

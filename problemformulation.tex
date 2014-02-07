@@ -41,10 +41,10 @@ due to primary users in cognitive radios~\cite{haykin2005cognitive}).
 Prior work has worked to reduce interference levels via gateway deployment,
 channel assignment, and routing~\cite{he2008optimizing,tang2005interference}.
 The interference of a wireless network could be divided into two categories
-according to the interferring source: {\it (i)} intra-network interference,
+according to the interfering source: {\it (i)} intra-network interference,
 caused by nodes in the same network, and {\it (ii)} inter-network interference,
 caused by nodes or devices outside of the network. Most of the existing works
-try to reuce the intra-network interference without regard to the inter-network 
+try to reduce the intra-network interference without regard to the inter-network 
 interference~\cite{si2010overview}. However, the existence of inter-network 
 interference becomes an important problem when considering the availability
 of white space bands.  While theoretical models describing inter-network 
@@ -184,72 +184,73 @@ a larger number of white space bands can be leveraged in these areas.
 \label{subsec:problem}
 
 % Assumptions of the network
-Oppose to previous works, this paper focuses on bands adaptation of Inter-network 
-interference and population density in multiband scenario~\cite{tang2005interference,yuan2006cross
-,si2010overview}. We propose a measurement driven framework to get the  
-number of access points for serving a certain area with QoS requirement.
-We prove that using radios with a greater diversity in propagation could 
-achieve overall network performance gains. 
-We assume an access point could have limited number of radios, fixed number of 
-channels in total, the radios could work in any channel, and the same antenna gain.
-Each radio on access point operates with a classic protocol model~\cite{gupta2000capacity}. 
-Generally, Internet data request comes with population and Finland government even announce 
-broadband is an individual 'legal right'~\cite{bbcfinland,rosston2011household}. 
-Providing a community wireless Internet service have to satisfy its traffic demand 
-of the people in the area. In populated urban area, more people need more 
-network capacity in which case WiFi band spatial reuse is better than white space bands
-who limit the capacity in a large area. Moreover, in populated urban area, 
-more Inter-network interference comes from TV station and other sources in white space
-bands could reduce the capacity of a channel. However, in rural area, too many access points
-in WiFi bands for the large area is a waste of funding. Here we are trying to answer the question
- in a certain Inter-network interference, what is the band or bands combination we should 
- use to provide network service for a community with different population density.
+As opposed to previous works such as~\cite{tang2005interference,yuan2006cross
+,si2010overview}, this paper focuses on reducing the inter-network
+interference for various population densities for wireless access networks which
+jointly employ WiFi and white space bands. We propose a measurement-driven 
+framework to estimate the number of access points required for serving the traffic
+demand of a certain area. We assume an access point has a limited number of radios
+which operate on any channel of a fixed number of channels with the same antenna gain.
+Each radio on an access point operates with a classic protocol model~\cite{gupta2000capacity}. 
+We further assume that there is a given take rate and traffic demand for a given 
+population (as specified in Section~\ref{sec:experimentdesign}).  
+%Generally, Internet data request comes with population and Finland government even announce 
+%broadband is an individual 'legal right'~\cite{bbcfinland,rosston2011household}. 
+%Providing a community wireless Internet service have to satisfy its traffic demand 
+%of the people in the area. 
+%In populated urban areas, more people need more 
+%network capacity in which case WiFi band spatial reuse is better than white space bands
+%who limit the capacity in a large area. Moreover, in populated urban area, 
+%more Inter-network interference comes from TV station and other sources in white space
+%bands could reduce the capacity of a channel. However, in rural area, too many access points
+%in WiFi bands for the large area is a waste of funding. Here we are trying to answer the question
+% in a certain Inter-network interference, what is the band or bands combination we should 
+% use to provide network service for a community with different population density.
+%Since mathematical formula is difficult to describe the activities of 
+%signal on the air even in an arbitrary area.
 
-Since mathematical formula is difficult to describe the activities of 
-signal on the air even in an arbitrary area.
-We use long term measurement represent the spectrum utility in each band. 
-We define the the percentage of sensing samples $S_\theta$ above a 
+For spectrum utility and resulting channel availability, we use a long-term measurement 
+for each band.  We define the percentage of sensing samples $S_\theta$ above an 
 interference threshold $\theta$ over the total samples $S$ in a time unit as the 
-{\it $Activity Level$} $A$ of Inter-network interference shown in equation~\ref{eq:actdef}
+activity level $A$ of inter-network interference:
 \begin{equation}
 \label{eq:actdef}
 A=\frac{S_\theta}{S_a}
 \end{equation}
-The capacity of a clean channel is $C$, with protocol model, the capacity 
-of a channel with Inter-network interference $C_r$ could be represented as 
-the remaining time multiple the clean channel capacity in equation~\ref{eq:intercap}
+The capacity of a clean channel is denoted by $C$. With the protocol model, the capacity 
+of a channel with inter-network interference $C_r$ could be represented as 
+the remaining time of the clean channel capacity according to: 
 \begin{equation}
 \label{eq:intercap}
 C_r=C*(1-\bar{A})
 \end{equation}
 
-A network deployment is suppose to provide network capacity equal to the demand of the service 
-area keeping the capacity constraint. The demand of a service area could be calculated as the 
-summation of individual demand all over the service area $D_a=\sum_{p\in P}D_p$. Since 
-individual or family Internet data demand is marked as government statistics~\cite{rosston2011household}, 
-$D_a$ could be remarked with population distribution $f$ and service area $k$ as 
+A network deployment should ideally provide network capacity equal to the demand of the service 
+area to maintain the capacity constraint. The demand of a service area could be calculated as the 
+summation of individual demands all over the service area $D_a=\sum_{p\in P}D_p$. Since 
+household demand for Internet has been previously characterized~\cite{rosston2011household}, 
+$D_a$ could represent the population distribution $f$ and service area $k$ as 
 $D_a=\sum_{f \in F,k \in K}\bar{D_p}*f*k$. 
-The network deployment capacity constraint could be represented with access points set $M$ 
-in equation~\ref{eq:nlbound}
-
+The capacity constraint could be represented with access points set $M$ according to:
 \begin{equation}
 \label{eq:nlbound}
 \sum_{m \in M}C_r^m \ge \sum_{f \in F,k \in K}\bar{D_p}*f*k
 \end{equation}
-At the same time, the wireless network has to satisfy the coverage constraint in the service 
-area that the access points provide single-hop connectivity for client devices. 
-Generally a coverage of $95\%$ is acceptable for outdoor mesh networks~\cite{robinson2010deploying}.
+At the same time, the wireless network must additionally satisfy the coverage constraint in the service 
+area where the access points provide connectivity for client devices. 
+Generally, a coverage of $95\%$ is acceptable for wireless access networks~\cite{robinson2010deploying}.
 
-In multiband scenario, the activity level varies with to different interference source 
-and the propagation characteristics bring the service area variation due to coverage and 
-capacity constraints. A simple method with the least number of access point to cover an area is to use 
-multiple orthogonal lower frequency channels. However, FCC limits the white space band utility 
-of data communication in most metro area in US~\cite{googledatabase}. Moreover, the number of channels in each 
-band is limited. Too many lower frequencies channels will bring huge Intra-network interference for 
-the network which is out of our scope. To answer the question given an area for a new network deployment, 
-the number of access points which equals to how much funding should be risen, we build the measurement driven
-framework {\it Multiband Access Point Estimation} to approach the number of access points for
-an arbitrary area.
+In a joint white space and WiFi scenario, the activity level varies according to various interfering 
+sources and the propagation characteristics induced by the environmental characteristics of the service area.
+A simple method with the least number of access point to cover an area is to use 
+multiple orthogonal lower-frequency channels. However, the FCC limits the white space band availability 
+for data communication in most metropolitan areas in the United States~\cite{googledatabase}. Moreover, the 
+number of channels in each band is limited. Too many lower-frequency channels will cause high levels of 
+intra-network interference for the network, which is out of our scope in this work. We assume that the 
+cost of the network is proportional to the number of access points required for a given user demand (i.e., due
+to the cost of hardware and installation). Therefore, given a geographical region for a new network deployment
+we build a measurement-driven framework called Multiband Access Point Estimation (MAPE) to compute the required
+number of access points.
 
 \begin{algorithm}[t]
 \small
@@ -263,7 +264,7 @@ $C$: Clean Channel Capacity\\
 $n$: Path Loss Exponent \\
 $B$: Available frequency bands\\
 $M$: Area need to be covered
-\STATE Chop $M$ in to different type, calculate the traffic demand density $f$
+\STATE Split $M$ in to different type, calculate the traffic demand density $f$
 \STATE Calculate in-field channel capacity $C_r$ as $C(1-A)$
 \STATE Get the propagation coverage area radius $R_p$ from Frii model based on $n,B,F$
 \STATE Calculate the QoS coverage radius $R_{QoS}$ of a Multiband Access Point satisfy the demands of the area
@@ -276,23 +277,26 @@ The number of Access Points\\
 
 % Fix the framework , Mark should use them in a single tower with more radios
 % Framework
-In space domain, the advantage of high frequency channel in network is the spatial reuse, the low
-frequency channel is better in large scale coverage. Generally high frequency fit
-for populated area and low frequency fit for sparse area.
-The time domain variation of spectrum utility across bands could be seen in Figure~\ref{fig:labact}.
-For an ISP, the service quality which maps to the capacity constraint has to be satisfied.
-Given an area of metropolitan, the population distribution could be found in 
-government and academy resources~\cite{uscensus}. Then we have the capacity request
-of each part of the area with the assumption everyone has the same Internet demand. 
-According to the population distribution, we chop the area into different types.
-These are the space domain input. Then we count the measured activity level as 
-input in time domain. We have an average channel capacity of each band with the 
-activity level. With received signal strength threshold, 
-the QoS coverage area of different type per channel and the reuse distance could be computed. 
-Then the maximum area an access point could cover can be calculated as the minimize 
-area of the QoS coverage area and propagation coverage.
-Then the transmitting power is adjusted to fulfill the coverage restriction. 
-A classic regular hexagon deployment process is employed to put the access points.
+In the space domain, the advantage of higher-frequency channels is the spatial reuse, while
+the lower-frequency channels provide greater levels of coverage. Generally, higher 
+frequencies are more appropriate for populated areas, and lower frequencies are
+more appropriate for sparse areas. The time-domain variation of spectrum utilization 
+differs across bands.
+%could be seen in Figure~\ref{fig:labact}.
+For an internet service provider, the service quality which maps to the capacity constraint must be satisfied.
+Given a metropolitan area, the population distribution can be found according to
+government statistics~\cite{uscensus}. Then, we can estimate the capacity demand
+of each type of area with the assumption that users will exhibit average demand.
+According to the population distribution, we split the area into different types,
+which compose the space-domain input. Then, we use the measured activity level as 
+the time-domain input. We have an average channel capacity of each band according to the 
+activity level. With the received signal strength threshold, the Quality-of-Service-constrained
+coverage area of different types per channel, and the spatial reuse distance be directly
+computed. Then, the maximum area an access point could cover can be calculated as the minimal
+area of the QoS-based coverage area and propagation coverage.
+Then, the transmit power is adjusted to fulfill the coverage restriction subject to
+the FCC regulations for maximum-allowable transmit power. 
+A classic regular hexagon deployment process is employed to place the access points.
 
 %With this framework, we combine our measurements to evaluate white
 %space bands application varying with population density in section~\ref{sec:experimentdesign}.

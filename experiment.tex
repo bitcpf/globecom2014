@@ -1,30 +1,32 @@
 \section{Experiment and Analysis}
 \label{sec:experimentdesign}
-To evaluate the spectrum utility from in-field measurements, we develop experiments 
-with an off-the-shelf wireless platform and remote controlled spectrum analyzer
-measurement platform.
+To evaluate the spectrum utility from in-field measurements, we perform experiments 
+with an off-the-shelf wireless platform and mobile spectrum analyzer.
 %We collect measurements in typical populated areas and sparse areas of DFW metropolitan carrying these platforms. 
-According to the measured data, we apply our MAPE framework to analyze the performance 
-of white space bands application in network deployment.
+According to the measured data, we apply our MAPE framework to analyze the role
+of white space and WiFi bands in total access points required for a given deployment area.
 
 \subsection{Experiment Design}
 % Platform
 %To ensure the results are applicable, 
-We employ a Linux-based 802.11 testbed~\cite{Gateworks},
-which includes a Gateworks 2358 board with Ubiquiti XR radios (XR9 at 900 MHz, 
-XR2 at 2.4 GHz, XR5 at 5.2 GHz) and a DoodleLabs DL475 radio at 450 MHz~\cite{Ubnt,Gateworks}.
-We develop shell scripts with tcpdump for this testbed working as a sniffer recording all 
-802.11 packets.
-We perform experiments in downtown Dallas, SMU campus, and neighborhood. The results show
-no 802.11 packets detected in white space bands(450 MHz, 900 MHz) there. 
-And in DFW area, as 
-far as we know, we are the only group holds FCC license of white space bands. 
-Our experiments verify that these bands have not been used for commercial wireless data communication.
-Moreover, we observed that Gateworks platform only update its received signal strength when received
-a new packet.
-It is not good for inter-network interference measurement. To cover the gap,
-we employ a spectrum analyzer, multiband antenna, mobile antenna and a laptop developing
-a spectrum sensing system.
+We employ a Linux-based 802.11 testbed, which includes a Gateworks 2358 board with 
+Ubiquiti XR radios (XR9 at 900 MHz, XR2 at 2.4 GHz, XR5 at 5.2 GHz) and a DoodleLabs DL475 
+radio at 450 MHz.  We develop shell scripts with tcpdump for this testbed working as a sniffer 
+and recording all 802.11 packets. However, since the Gateworks platform only updates its
+estimate of received signal strength upon the reception of a new packet, we employ a
+a spectrum analyzer to form a notion of inter-network interference with finer granularity.
+We have Rohde \& Schwarz FSH8 portable spectrum works from 100 KHz to 8 GHz. The portable spectrum
+analyzer is controlled by a Python script on a laptop measure the received signal strength 
+in a short term. 
+%We perform experiments in downtown Dallas, SMU campus, and neighborhood. The results show
+%no 802.11 packets detected in white space bands(450 MHz, 900 MHz) there. 
+%And in DFW area, as far as we know, we are the only group holds FCC license of white space bands. 
+%Our experiments verify that these bands have not been used for commercial wireless data communication.
+%Moreover, we observed that Gateworks platform only update its received signal strength when received
+%a new packet.
+%It is not good for inter-network interference measurement. To cover the gap,
+%we employ a spectrum analyzer, multiband antenna, mobile antenna and a laptop developing
+%a spectrum sensing system.
 
 % Data normalize 
 As far as we know, there is no mobile multiband antenna in the market. We use a 700 MHz
@@ -71,8 +73,6 @@ Downtown, neighborhood and rural area are chosen from Weatherford and Millsap.
 Then we post-process the data to calculate the activity level of each band in each location.
 
 
-%FIXME - put in experiment section
-% Here
 \subsection{Results and Analysis} 
 \label{subsec:result}
 In this subsection, we discuss our measurements results and perform our WAPE framework 
@@ -95,7 +95,7 @@ The map itself shows the available white space channels in DFW area, more green 
 more channels. Our in-field measurement matches the FCC restriction showing that less channels means
 more spectrum utility and tell the spectrum utility levels varying across population 
 distribution. We use the measurements collected at more fixed locations as marked on the map for
- the activity level calculation. 
+the activity level calculation. 
 
 \begin{figure}
 %\vspace{-0.0in}
@@ -117,7 +117,7 @@ distribution. We use the measurements collected at more fixed locations as marke
 \vspace{-0.1in}
 \end{figure}
 
-The activity level calculated with our measurements are shown in table~\ref{tab:activitymeasurement}.
+The activity level calculated with our measurements are shown in Table~\ref{tab:activitymeasurement}.
 Dallas as the central city of North Texas, has the highest activitie level in most of the measured bands,
 especially in 450 MHz. The measurements of Dallas urban are taken from SMU campus, 2 neighborhoods
 and city Plano. Our meaurements indicates that 2.4 GHz has a higher activity level in urban area than 
@@ -288,7 +288,7 @@ White space channels brings up to 87.5\% gain in 3 bands combination scenario in
 density and up to 33.3\% gain in 1,500 population density. And with 4 bands, the number of 
 access points does not outperform using channels in white space bands.
 
-From figure~\ref{fig:redensity} and table~\ref{tab:500comb}, we could find as the population
+From figure~\ref{fig:redensity} and Table~\ref{tab:500comb}, we could find as the population
 density increase, the gain of white spaces decrease. Centralizing channels in white space
 bands could get more benefit comparing with distribute them into multiband bands.
 And also, as population and spectrum utility increase, at some point, the performance of
