@@ -68,15 +68,9 @@ J.~Tang, G.~Xue, and W.~Zhang, ``Interference-aware topology control and {QoS}
 J.~Robinson, M.~Singh, R.~Swaminathan, and E.~Knightly, ``Deploying mesh nodes
   under non-uniform propagation,'' in \emph{{IEEE INFOCOM}}, 2010.
 
-\bibitem{subramanian2008minimum}
-A.~P. Subramanian, H.~Gupta, S.~R. Das, and J.~Cao, ``Minimum interference
-  channel assignment in multiradio wireless mesh networks,'' \emph{{IEEE TMC}},
-  vol.~7, no.~12, pp. 1459--1473, 2008.
-
-\bibitem{ramachandran2006interference}
-K.~N. Ramachandran, E.~M. Belding-Royer, K.~C. Almeroth, and M.~M. Buddhikot,
-  ``Interference-aware channel assignment in multi-radio wireless mesh
-  networks.'' in \emph{{IEEE INFOCOM}}, 2006.
+\bibitem{msdatabase}
+``Microsoft research white space database,''
+  \url{http://whitespaces.cloudapp.net/Default.aspx}, 2013.
 
 \bibitem{yuan2006cross}
 J.~Yuan, Z.~Li, W.~Yu, and B.~Li, ``A cross-layer optimization framework for
@@ -108,10 +102,34 @@ G.~Rosston, S.~Savage, and D.~Waldman, ``Household demand for broadband
 \bibitem{Ubnt}
 ``Ubiquiti xtremerange series of radio,'' http://www.ubnt.com/, 2012.
 
+\bibitem{usrp}
+E.~Research, ``Usrp n210,''
+  \url{https://www.ettus.com/product/details/UN210-KIT}, 2014.
+
+\bibitem{meikle2012global}
+R.~Meikle and J.~Camp, ``A global measurement study of context-based
+  propagation and user mobility,'' in \emph{Proceedings of the 4th ACM
+  international workshop on Hot topics in planet-scale measurement}.\hskip 1em
+  plus 0.5em minus 0.4em\relax ACM, 2012, pp. 21--26.
+
+\bibitem{ramachandran2006interference}
+K.~N. Ramachandran, E.~M. Belding-Royer, K.~C. Almeroth, and M.~M. Buddhikot,
+  ``Interference-aware channel assignment in multi-radio wireless mesh
+  networks.'' in \emph{{IEEE INFOCOM}}, 2006.
+
 \bibitem{akyildiz2006next}
 I.~F. Akyildiz, W.-Y. Lee, M.~C. Vuran, and S.~Mohanty, ``Next
   generation/dynamic spectrum access/cognitive radio wireless networks: a
   survey,'' \emph{Computer Networks}, vol.~50, no.~13, pp. 2127--2159, 2006.
+
+\bibitem{cabric2004implementation}
+D.~Cabric, S.~Mishra, and R.~Brodersen, ``Implementation issues in spectrum
+  sensing for cognitive radios,'' in \emph{Signals, Systems and Computers,
+  2004. Conference Record of the Thirty-Eighth Asilomar Conference on},
+  vol.~1.\hskip 1em plus 0.5em minus 0.4em\relax Ieee, 2004, pp. 772--776.
+
+\bibitem{fccwhitespace}
+``Fcc white space,'' \url{http://www.fcc.gov/topic/white-space}, 2012.
 
 \bibitem{cui2013leveraging}
 P.~Cui, H.~Liu, J.~He, O.~Altintas, R.~Vuyyuru, D.~Rajan, and J.~Camp,
@@ -122,6 +140,10 @@ P.~Cui, H.~Liu, J.~He, O.~Altintas, R.~Vuyyuru, D.~Rajan, and J.~Camp,
 P.~Bahl, R.~Chandra, T.~Moscibroda, R.~Murty, and M.~Welsh, ``White space
   networking with {WiFi} like connectivity,'' \emph{{ACM SIGCOMM}}, vol.~39,
   no.~4, pp. 27--38, 2009.
+
+\bibitem{akyildiz2005wireless}
+I.~F. Akyildiz, X.~Wang, and W.~Wang, ``Wireless mesh networks: a survey,''
+  \emph{Computer networks}, vol.~47, no.~4, pp. 445--487, 2005.
 
 \bibitem{harrison2010much}
 K.~Harrison, S.~M. Mishra, and A.~Sahai, ``How much white-space capacity is
