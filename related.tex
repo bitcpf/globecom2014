@@ -2,30 +2,36 @@
 \label{sec:related}
 
 % Inter-network vs Intra-network interference
-Many efforts have been put in wireless network deployment in WiFi bands~\cite{he2008optimizing,ramachandran2006interference,akyildiz2006next}.
-These works focus on solving gateway placement, channel assignment, routing 
-problems in wireless network to reduce the interference generated inside the network.
-However, wireless interference is not only from a new deployment network but also from the
-existing wireless device. Unfortunately, few of the works in network deployment notice the 
-inter-network interference. Some cognitive radio works discuss the inter-network
-interference, but most of them focus on point to point communication other than network~\cite{cabric2004implementation}.
+%Many efforts have been put in wireless network deployment in WiFi bands~\cite{he2008optimizing,ramachandran2006interference,akyildiz2006next}.
+Prior work in wireless network deployment has focused extensively on solving gateway placement, 
+channel assignment, and routing problems to reduce the interference 
+generated inside the network~\cite{he2008optimizing,ramachandran2006interference,akyildiz2006next}.
+%However, wireless interference is not only from the new deployment network but also from the existing wireless device. 
+Unfortunately, few works in network deployment notice the 
+interference across networks. Some cognitive radio works discuss this inter-network
+interference, but most of them focus on point-to-point communication other than taking a network-wide view~\cite{cabric2004implementation}.
 
 % White Space large propagation range
-As FCC adopt white space bands for wireless communication, new research room comes out 
-for wireless network deployment~\cite{fccwhitespace}. The white spaces bring two
-concerns: large propagation range and existing Inter-network interference from 
-TV station and other device~\cite{cui2013leveraging,bahl2009white}.
-Previous works fails to discover the white spaces benefit and drawback in network deployment~\cite{akyildiz2005wireless}.
-Many works correlated to white spaces are tareting on opportunistic medium access.
-However, the application of white space in outdoor environment, such as urban, rural area, has not been recognized.
-Lacking the quantization discussion of white space in outdoor environment is blocking the development of white space
-application.
-
+With new FCC regulations on the use of white space bands, there are two factors to
+consider with such bands: large propagation range and existing inter-network interference from 
+TV stations and other devices such as microphones~\cite{fccwhitespace,cui2013leveraging,bahl2009white}.
+Prior work does not specifically study the benefits of jointly using white space and WiFi bands in
+deployment of wireless access networks~\cite{akyildiz2005wireless}. Additionally, prior work related
+to white spaces target opportunistic media access. However, the application of white spaces 
+across diverse population densities has not been fully explored.
+%outdoor environment, such as urban and rural areas, has not been exploited. Lacking the 
+%discussion of white space in outdoor environment is blocking the development of white space
+%applications.
+ 
  % Network propagation difference
-There are some works discuss the propagation variation in both WiFi network and white space network.
-In~\cite{robinson2010deploying}, Robinson model the propagation variation at the same band in terrain 
-domain. Rohan brings a databased-driven SenseLess framework designing a white space network with 
-database of primary user(TV station) location, channel occupation~\cite{murty2012senseless}. 
-However, as far as we know, no work jointly discuss the influence of white space on network deployment in 
-propagation variation of space domain and spctrum utility in time domain.
+Finally, some works discuss the propagation variation in both WiFi bands and white space bands.
+For example, Robinson et al. models the propagation variation at the same band in terrain 
+domain~\cite{robinson2010deploying}. Another work proposes a databased-driven framework for
+designing a white space network with database of primary user (TV station) locations and channel 
+occupation~\cite{murty2012senseless}. However, these works do not jointly study
+the influence of white space and WiFi bands on network deployment according to their resulting 
+propagation variation and spectrum utilization.
+%of the space domain and spectrum utility in time domain.
+
+
 

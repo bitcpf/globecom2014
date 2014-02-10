@@ -1,5 +1,5 @@
-BASE = mbmeasurement
-SRC = mbmeasurement.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex mbmeasurement.bib 
+BASE = centervsdis
+SRC = centervsdis.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex centervsdis.bib 
 
 all: $(BASE).ps 
 b: $(BASE).bbl
