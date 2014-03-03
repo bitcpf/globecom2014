@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=latex 2012.4.6)  17 FEB 2014 11:43
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=latex 2012.4.6)  3 MAR 2014 15:38
 entering extended mode
 **centervsdis
 (./centervsdis.tex
@@ -338,15 +338,16 @@ File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 LaTeX Warning: Reference `sec:experimentdesign' on page 2 undefined on input li
 ne 196.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
+[2]
 Underfull \hbox (badness 6658) in paragraph at lines 271--272
 [] []\OT1/ptm/m/n/9 The cov-er-age ra-dius of a Multi-band Ac-cess Point is
  []
 
-) (./related.tex) (./conclusion.tex) (./centervsdis.bbl [3]
+
+Underfull \vbox (badness 3514) has occurred while \output is active []
+
+)
+(./related.tex) (./conclusion.tex) (./centervsdis.bbl [3]
 Underfull \hbox (badness 10000) in paragraph at lines 72--74
 []\OT1/ptm/m/n/8 ``Microsoft re-search white space database,''
  []
@@ -373,10 +374,10 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  2863 strings out of 94501
  39453 string characters out of 1176790
- 93273 words of memory out of 1000000
+ 94273 words of memory out of 1000000
  5973 multiletter control sequences out of 10000+50000
  30696 words of font info for 80 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
  27i,8n,24p,261b,309s stack positions out of 1500i,500n,5000p,200000b,5000s
 
-Output written on centervsdis.dvi (4 pages, 29172 bytes).
+Output written on centervsdis.dvi (4 pages, 30988 bytes).
