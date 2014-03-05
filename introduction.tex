@@ -27,66 +27,49 @@ reuse. While many works have worked to address multihop wireless network deploym
 in terms of maximizing served user demand and/or minimizing network costs,
 the unique deployment heterogeneous access points of white space bands and 
 WiFi bands have either not been studied~\cite{si2010overview}. 
-Specifically, previous work has investigated wireless network deployment in terms of multiradio
-network capacity, power control, gateway placement, channel assignment, 
+Specifically, previous work has investigated wireless network deployment in terms of 
+multiradio network, power control, gateway placement, channel assignment, 
 and routing~\cite{kodialam2005characterizing,he2008optimizing,marina2010topology}.
 However, each of these works focus on the deployment in WiFi bands without
 considering the white space bands. The white space band could extend the capacity 
 degree and the coverage degree of an access point simultaneous. 
 
-
-
-
-
-In WiFi and white 
-space heterogeneous wireless network, the coverage area of an These issues are substantial to 
-designing an optimal network deployment and provide potential commercial 
-wireless services to clients in any location.
-
-
-
-
-
-
-
-
-
+In WiFi and white space heterogeneous wireless network, the service area degree of 
+an access point depends on the capacity of radios, the propagation range and the 
+demands of the serving area. The scant frequencies of radios, the propagation distinctive
+and the demands diversity of population distribution bring the variation of an access point
+serive area. These issues are substantial to designing an optimal network deployment 
+and provide potential commercial wireless services to clients in any location.
 
 Thus, the new opportunities created by white spaces motivate the following 
 questions for wireless Internet carriers, which have yet to be addressed: 
 {\it (i) To what degree can white space bands reduce the network deployment cost of
 sparsely populated rural areas as opposed to comparable WiFi-only solutions?} and 
-{\it (ii) Where along the continuum of user population densities do the white
-space bands no longer offer cost savings for wireless network deployments?}
+{\it (ii) To what degree can hetergeneous access points could benefit the dense 
+population areas and sparsely populated rural areas?}
 
-In this paper, we perform a measurement study which considers the propagation 
-characteristics and observed in-field spectrum availability of white space
-and WiFi channels to find the total number of access points required to serve a 
-given user demand. Across varying population densities in representative 
-rural and metropolitan areas we compare the cost savings (defined in terms of
-number of access points reduced) when white space bands are not used.
-To do so, we first define the metric to quantify the spectrum utility in a
-given measurement location. With the in-field measured spectrum utility data 
-in metropolitan and surrounding areas of Dallas-Fort Worth (DFW), we 
-calculate the activity level in WiFi and white space bands. Second, we 
-propose a measurement-driven framework to find the number of access points required 
-for areas with differing population densities according to our measurement locations
-and census data. We then evaluate our measurement-driven framework, showing
-the band selection across downtown, residential and university settings in
+In this paper, we perform a relaxed linear program which considers the 
+variation of hetergeneous access point service area too find the lower bound
+total number of access points required to serve a given user demand. Further,
+we represent an FIXME greedy algorithm to approach the lower bound.  
+Across varying hetergeneous white space and WiFi radios combination, population 
+densities in representative rural and metropolitan areas we compare the 
+cost savings (defined in terms of number of access points reduced) when 
+white space bands are not used. We then evaluate our FIXME, showing
+the hetergenous band selection across downtown, residential and university settings in
 urban area and rural areas and analyze the impact of white space and WiFi
-channel combinations on a wireless deployment in these representative scenarios.
+combinations on a wireless deployment in these representative scenarios.
 
 % Paper contributions
 The main contributions of our work are as follows:
 \begin{itemize}
-\item We perform in-field measurements of spectrum utilization in various representative
-scenarios across the DFW metroplex, ranging from sparse rural to dense urban areas and 
-considering the environmental setting (e.g., downtown, residential, or university campus).
-%Then we split the area into sub-areas according to the population density 
-%and analyze the measurement within sub-areas.
-\item W
-\item We analyze our framework under capacity and coverage constraints 
-\item We quantify the impact of white space and WiFi channel
+\item We develop an optimization framework based on linear programming to jointly leverage white space and WiFi 
+bands approaching the lower bound in terms of numer of access points to serve the demands of a given area.
+\item We design a FIXME algorithm, which model the problem as a bin package problem. We represent a 
+\item We evaluate the performance of the presented algorim, comparing with the lower bound and the hexagon
+WiFi access point deployment in sparse rural areas given similar channel resources. The numberic results shows that FIXME.  
+\item We further analysis the performance of hetergenous access point performance in variation of population density. The
+numberic results shows that hetergenous access point could improve the budget saving in FIXME(dense area/sparse area). 
 \end{itemize}
 
 
