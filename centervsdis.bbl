@@ -70,6 +70,18 @@ J.~Tang, G.~Xue, and W.~Zhang, ``Interference-aware topology control and {QoS}
   routing in multi-channel wireless mesh networks,'' in \emph{{ACM MobiHoc}},
   2005.
 
+\bibitem{joshi2009efficient}
+G.~P. Joshi, S.~W. Kim, and B.-S. Kim, ``An efficient mac protocol for
+  improving the network throughput for cognitive radio networks,'' in
+  \emph{Next Generation Mobile Applications, Services and Technologies, 2009.
+  NGMAST'09. Third International Conference on}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2009, pp. 271--275.
+
+\bibitem{raniwala2005architecture}
+A.~Raniwala and T.~Chiueh, ``Architecture and algorithms for an {IEEE}
+  802.11-based multi-channel wireless mesh network,'' in \emph{{IEEE INFOCOM}},
+  2005.
+
 \bibitem{robinson2010deploying}
 J.~Robinson, M.~Singh, R.~Swaminathan, and E.~Knightly, ``Deploying mesh nodes
   under non-uniform propagation,'' in \emph{{IEEE INFOCOM}}, 2010.
