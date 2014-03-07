@@ -31,6 +31,12 @@ W.~Si, S.~Selvakennedy, and A.~Y. Zomaya, ``An overview of channel assignment
   methods for multi-radio multi-channel wireless mesh networks,'' \emph{Journal
   of Parallel and Distributed Computing}, vol.~70, no.~5, pp. 505--524, 2010.
 
+\bibitem{kodialam2005characterizing}
+M.~Kodialam and T.~Nandagopal, ``Characterizing the capacity region in
+  multi-radio multi-channel wireless mesh networks,'' in \emph{Proceedings of
+  the 11th annual international conference on Mobile computing and
+  networking}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2005, pp. 73--87.
+
 \bibitem{he2008optimizing}
 B.~He, B.~Xie, and D.~P. Agrawal, ``Optimizing deployment of internet gateway
   in wireless mesh networks,'' \emph{Computer Communications}, vol.~31, no.~7,

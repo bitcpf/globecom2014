@@ -2,14 +2,15 @@
 \label{sec:problemformulation}
 
 % Introduce the content of this section
-In this section, we illustrate the challenges of band selection
-in wireless network deployment and formulate the problem of band 
+In this section, we illustrate the challenges of hetergenous access point 
+band selection in wireless network deployment and formulate the problem of band 
 selection in mesh network deployments jointly using WiFi and white space bands. 
-Further, we present a measurement-driven framework for estimating the 
-mesh node number to serve the traffic demand of a given population.
+Further, we present a linear program and a FIXME algorithm for estimating the 
+access point number to serve the traffic demand of a given population.
  
 \subsection{White Space Opportunity and Challenge}
 \label{subsec:motivation}
+
 % Propagation
 Wireless propagation is the behavior of the signal loss characteristics 
 when wireless signals are transmitted through the wireless medium.
@@ -30,31 +31,25 @@ Here, $n$ varies according to the aforementioned environmental
 factors with the value of two to five in typical outdoor 
 settings~\cite{rappaport}.
 
-% Existing Interference
-%Wireless communication has changed the world since the day it was discovered.
-%Wireless signals have filled up the world with different the frequency bands.
-%These signals help people improve their lives as well as bringing interference
-%to each other when they are in the same frequency band.
+% Hetergenous access points
 Despite sufficient levels of received signal, interference can cause channels
-to be unusable (e.g., due to high levels of packet loss) or unavailable (e.g., 
+to be unusable (e.g., due to high levels of packet loss) or unavailable (e.g.,
 due to primary users in cognitive radios~\cite{haykin2005cognitive}).
-Prior work has worked to reduce interference levels via gateway deployment,
-channel assignment, and routing~\cite{he2008optimizing,tang2005interference}.
-The interference of a wireless network could be divided into two categories
-according to the interfering source: {\it (i)} intra-network interference,
-caused by nodes in the same network, and {\it (ii)} inter-network interference,
-caused by nodes or devices outside of the network. Most of the existing works
-try to reduce the intra-network interference without regard to the inter-network 
-interference~\cite{si2010overview}. However, the existence of inter-network 
-interference becomes an important problem when considering the availability
-of white space bands.  While theoretical models describing inter-network 
-interference exist, accurately characterizing a particular region must be done empirically.
+Prior work has worked to reduce cost through gateway deployment, channel 
+assignment, and routing~\cite{he2008optimizing,tang2005interference}.
+Most of existing works try to reduce the intra-network interference or increase
+the channel usability level of wireless network deployment
+~\cite{si2010overview,joshi2009efficient}. However, the access point service area
+variation becomes an important problem when considering the availability of white space bands.  
+Jointly considering the propagation and single channel capacity, the access points 
+with different configuration (e.g. radios) in the same area, or with same configuration 
+in diverse population density areas (e.g. downtown, rural) could have different service ranges.
 
-% Explain multiband and activity level
-When wireless devices operate in WiFi bands, the channel separation is relatively 
+% Explain multiband and hetergenous access points
+When wireless devices operate in WiFi bands, the channel separation is relatively
 small (e.g., 22 MHz for the 2.4 GHz band). As a result, many works assume that
 the propagation characteristics across channels are similar. However, with the
-large frequency differences of WiFi and white space bands (e.g., multiple GHz),
+large frequency gaps of WiFi and white space bands (e.g., several GHz),
 propagation becomes a key factor in the deployment of wireless networks with both bands.
 Here, a frequency band is defined as a group of channels which have
 small separation meaning similar propagation characteristics.
@@ -62,12 +57,16 @@ In this work, we consider the diverse propagation and activity characteristics
 for four total frequency bands: 450 MHz, 800 MHz, 2.4 GHz, and 5.2 GHz.
 We refer to the two former frequency bands as white space bands and
 the two latter frequency bands as WiFi bands.
-The differences in propagation and spectrum utilization creates opportunity
-for the joint use of white space and WiFi bands in wireless access networks according
-to the environmental characteristics (e.g., urban or rural and downtown or residential)
-of the deployment location.
+A general way to increase the capacity of a single access point is to add channels
+through radios~\cite{raniwala2005architecture}. The assumption all the channels have
+the same propagation does not fit for WiFi and white space hetergenous scenario.
+When a white space band channel added to an access point, the capacity and service 
+range could increase simultaneously. The differences in propagation and constraints 
+of network deployment create opportunity for the joint use of white space and 
+WiFi bands in wireless access networks according to the environmental characteristics 
+(e.g., urban or rural and downtown or residential) of the deployment location.
 
-% Network Constraint
+% Network Constraints
 Typically, the deployment of wireless access networks is subject to coverage and capacity
 constraints for a given region. Coverage is defined with respect to the ability of
 clients to connect to access points within their service area.  We use a coverage
@@ -76,12 +75,17 @@ Capacity is defined with respect to the ability of a network to serve the traffi
 demand of clients.  Spatial reuse allows improved capacity, but increases the cost
 of deploying a network by increasing the total number of access points required.
 Hence, for densely populated areas the greatest level of spatial reuse possible
-is often desired.  In contrast, sparsely-populated rural areas have lower traffic
-demand per unit area.  Thus, aggregating this demand with lower-frequency, white 
-space bands could be highly effective in reducing the total number of access points 
-required to achieve similar coverage and capacity constraints.  Moreover, since
-less TV channels tend to be occupied in sparsely populated areas~\cite{msdatabase}, 
-a larger number of white space bands can be leveraged in these areas.
+is often desired. And the deployment cost could be significant reduced through access 
+points with high capacity with more centralized using radios. In contrast, 
+sparsely-populated rural areas have lower traffic demand per unit area. Thus, 
+aggregating this demand with lower-frequency, white space bands could be highly 
+effective in reducing the total number of access points required to achieve 
+similar coverage and capacity constraints. Moreover, since less TV channels tend
+ to be occupied in sparsely populated areas~\cite{msdatabase}, a larger number 
+ of white space bands can be leveraged in these areas. 
+
+
+
 
 % Make multiband challenges
 %The broadcast nature of the wireless induces interferences, 
