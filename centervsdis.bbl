@@ -90,10 +90,11 @@ J.~Robinson, M.~Singh, R.~Swaminathan, and E.~Knightly, ``Deploying mesh nodes
 ``Microsoft research white space database,''
   \url{http://whitespaces.cloudapp.net/Default.aspx}, 2013.
 
-\bibitem{yuan2006cross}
-J.~Yuan, Z.~Li, W.~Yu, and B.~Li, ``A cross-layer optimization framework for
-  multihop multicast in wireless mesh networks,'' \emph{{IEEE JSAC}}, vol.~24,
-  no.~11, pp. 2092--2103, 2006.
+\bibitem{franklin2007node}
+A.~A. Franklin and C.~S.~R. Murthy, ``Node placement algorithm for deployment
+  of two-tier wireless mesh networks,'' in \emph{Global Telecommunications
+  Conference, 2007. GLOBECOM'07. IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2007, pp. 4823--4827.
 
 \bibitem{gupta2000capacity}
 P.~Gupta and P.~R. Kumar, ``The capacity of wireless networks,'' \emph{{IEEE
@@ -103,12 +104,6 @@ P.~Gupta and P.~R. Kumar, ``The capacity of wireless networks,'' \emph{{IEEE
 G.~Rosston, S.~Savage, and D.~Waldman, ``Household demand for broadband
   internet service,'' \emph{Communications of the ACM}, vol.~54, no.~2, pp.
   29--31, 2011.
-
-\bibitem{googledatabase}
-``Google spectrum database,'' \url{http://goo.gl/NnIFXQ}, 2013.
-
-\bibitem{uscensus}
-``People and households,'' \url{http://www.census.gov/people/}, 2014.
 
 \bibitem{fccwhitespace}
 ``Fcc white space,'' \url{http://www.fcc.gov/topic/white-space}, 2012.
