@@ -198,22 +198,6 @@ of spectrum resources and radios have similar configuration. Each radio on an ac
 point operates with a classic protocol model~\cite{gupta2000capacity}. 
 We further assume that there is a given take rate and traffic demand for a given 
 population (as specified in Section~\ref{sec:experimentdesign}).
-%Generally, Internet data request comes with population and Finland government even announce 
-%broadband is an individual 'legal right'~\cite{bbcfinland,rosston2011household}. 
-%Providing a community wireless Internet service have to satisfy its traffic demand 
-%of the people in the area. 
-%In populated urban areas, more people need more 
-%network capacity in which case WiFi band spatial reuse is better than white space bands
-%who limit the capacity in a large area. Moreover, in populated urban area, 
-%more Inter-network interference comes from TV station and other sources in white space
-%bands could reduce the capacity of a channel. However, in rural area, too many access points
-%in WiFi bands for the large area is a waste of funding. Here we are trying to answer the question
-% in a certain Inter-network interference, what is the band or bands combination we should 
-% use to provide network service for a community with different population density.
-%Since mathematical formula is difficult to describe the activities of 
-%signal on the air even in an arbitrary area.
-
-% quantify the constraints
 
 % Capacity constraint
 A network deployment should ideally provide network capacity equal to the demand of the service 
@@ -234,7 +218,8 @@ Generally, a coverage of $95\%$ is acceptable for wireless access networks~\cite
 The object of this work is to find the best possible locations for MNs so that the network has good 
 connectivity and enough capacity to satisfy the traffic demands.
 
-% Hetergeneous Access point
+
+% Hetergeneous Access point & resource constraint
 Under the capacity and coverage constraints, the serveice area of a hetergeneous multiband access point 
 varies according to the traffic demand. The service area is limited by the propagation range when the traffic 
 demand is low; and when the traffic demand is high, the service area is limited by the radio capacity.
@@ -293,7 +278,9 @@ lower bound.
 \end{figure}
 
 % Relaxed linear program
-
+Given a target area, service area of all kinds access points subject to capacity constraint, 
+a minimum number of access points could be found through linear program subject to 
+coverage and resource constraints as represent in~\ref{fimxe}. 
 
 \input{linear}
 
@@ -301,5 +288,4 @@ lower bound.
 % Algorithm for lower bound approaching
 
 % Algorithm analysis and justify
-
 

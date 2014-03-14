@@ -1,5 +1,5 @@
 BASE = centervsdis
-SRC = centervsdis.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex centervsdis.bib 
+SRC = linear.tex centervsdis.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex centervsdis.bib 
 
 all: $(BASE).ps 
 b: $(BASE).bbl
