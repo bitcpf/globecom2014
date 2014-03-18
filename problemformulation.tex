@@ -215,7 +215,7 @@ The capacity constraint could be represented with access points set $M$ accordin
 At the same time, the wireless network must additionally satisfy the coverage constraint in the service 
 area where the access points provide connectivity for client devices. 
 Generally, a coverage of $95\%$ is acceptable for wireless access networks~\cite{robinson2010deploying}.
-The object of this work is to find the best possible locations for MNs so that the network has good 
+The object of this work is to find the best possible number of access points so that the network has good 
 connectivity and enough capacity to satisfy the traffic demands.
 
 
@@ -266,6 +266,28 @@ The problme is known as a NP-hard problem~\cite{fixme}. We propose a relaxed lin
 get the lower bound of the number of access points and a heuristic algorithm to approach the 
 lower bound.
 
+%
+%\begin{figure}
+%\centering
+%\begin{subfigure}[b]{0.3}
+%\includegraphics[width=25]{figures/lowtraffic}
+%\caption{A gull}
+%\label{fig:gull}
+%\end{subfigure}
+%	\begin{subfigure}[b]{0.3}
+%	\includegraphics[width=25mm]{figures/mediumtraffic}
+%	\caption{A tiger}
+%	\label{fig:tiger}
+%	\end{subfigure}
+%	\begin{subfigure}[b]{0.3}
+%	\includegraphics[width=25mm]{figures/hightraffic}
+%	\caption{A mouse}
+%	\label{fig:mouse}
+%	\end{subfigure}
+%	\caption{Pictures of animals}
+%	\label{fig:animals}
+%	\end{figure}
+%
 
 \begin{figure}
 %\vspace{-0.0in}
@@ -281,8 +303,10 @@ lower bound.
 Given a target area $G$ with the traffic demand distribution $\gamma$, the service area 
 of all kinds access points $S_t$, the coverage rate $p$, thus the capacity of access point $C_t$ could 
 be calaculated based on the number of radios, Friis model~\ref{eq:friis} and restriction~\ref{eq:servicearea}
-or from in-field measurement~\cite{cuileveraging}. Furthermore, the minimum number of access points 
-could be found through a relaxed linear program as represent in ~\ref{opt:opt}. 
+or from in-field measurement~\cite{cuileveraging}. When the target area is served, the reward of the area 
+could be knows as a constant number $R$. However, the reward does not influence the optimal deployment since 
+the total reward is a constant. Furthermore, the minimum number of access points could be found through 
+a relaxed linear program as represent in ~\ref{opt:opt}. 
 
 \input{linear}
 
@@ -295,15 +319,23 @@ access points.
 In order to find a pratical access points deployment in multiband scenario, we represent 
 a greedy local search algorithm in~\ref{alg:gls}. The service area of access points varies 
 from population distribution. Assume the cost of building an access point is the same as $C_a$. 
-Thus, we rank the access points type according to their unit price as:
+When an access point is built, the more service area is better. Thus hetegenous access point
+could always have better performance. However, since there are a limit number of spectrum resource,
+we have to balance the usability of hetegenous access point who reduce the cost of building access 
+points, and single radio access point who may cover more areas.
+
+In linear program, the reward $R$ is a constant of the area $G$. But for a single hetergenous access
+point deployment, we have to compare its reward and cost to seperately using the radios.
+In a certain area, a hetegenous AP has radius $r_1$. If we sperately using the radios with
+radius $r_2,r_3,\dots r_n$, the reward is uniformly distributee, the hetegenous reward is defined as:
 
 \begin{equation}
 \label{eq:unitprice}
-p_s=C_a/A_s
+H_r=(n-1) C_a - \frac{R}{G}\cdot\sum f_s(r_n)
 \end{equation}
 
-$A_s=\pi s_r^2$ when a circle coverage model is applied, $A_s = \frac{3\sqrt{3}}{2}$ when a 
-hexagon coverage model is applied. In the framework, the access point type with less unit price 
+$f_s(r)$ is the area calculation functin, e.g. $f_s = \frac{3\sqrt{3}}{2}r^2$ when a 
+hexagon coverage model is applied. In the framework, the access point type with more reward 
 is going to deployed first till the available resource is used up. When two types of access points
 share the same unit price, considering the spacial reuse, access point with high frequency channels
 will be chosen. The deployment starts from the edge of the given plane. If the combination of unit 
@@ -317,35 +349,24 @@ a Teris game, when a given access point is filled, it will be deleted.
 \begin{algorithmic}[1]
 \REQUIRE  ~~\\
 $G$: Target Area \\
+$R$: Reward of Target Area \\
 $\gamma$: Traffic Demand Distribution\\
 $p$: Coverage Rate\\
 $S_t$: Coverage Area of Type t AP \\
 $O_{b,t}$: Channel Occupied by t Type AP\\
 $N_b$: Available channels of a Band in Target Area\\
 $C_t$: Channel Capacity of Type t AP
-\WHILE {$N_{served}=!M$}
-\FORALL {$s \in S_{current}$}
-	\STATE Find one-hop nodes in $S_{Next}$
-	\STATE Sort $S_Next$ according to distance from gateway nodes
-	\FORALL {$l \in S_{Next}$}
-		\STATE Calculate 1-hop path interference of link $s\rightarrow l$
-		\STATE Sort the links according to path interference
-		\STATE Assign(s,l) with the least interference link
-		\STATE Update $N_{served},N_{unserved}$
-		\STATE Update $I_{active}$ from $I$
-	\ENDFOR
-	\STATE $S_{current}=S_{Next}$
-\ENDFOR
-\ENDWHILE
-\STATE Rank available AP type according to their unit price $p_s$
+\WHILE {$\sum A\cdot S_t < p$}
+\STATE Rank available AP type according to their unit price $H_r$
 \STATE Deploy an AP at the left up edge of un-covered area
 \STATE Fill the AP with one neighbor unit grid and move the AP in the center of the coverage area
-\STATE 
-\STATE The coverage radius of a Multiband Access Point is $Min{R_p,R_{QoS}}$
-\STATE Apply regular hexagon deployment to get the number of access point for serving given area $M$
+\STATE Update Channel Resource $O_{b,t}, N_b$
+\STATE Update Output Access Point $A$
+\ENDWHILE
 \ENSURE ~~\\
 The number of Access Points and Deployment\\
 \end{algorithmic}
 \end{algorithm}
 % Algorithm analysis and justify
-
+Through the algorithm, we could cover the target area by the most efficient access point type
+step by step. The minmum number of access points and a pratical multiband wireless deployment.
