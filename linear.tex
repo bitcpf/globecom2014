@@ -11,11 +11,13 @@ $T$ & Type of Access Point\\
 %\vspace{0.1in}
 %\begin{tabular}{lll}
 \begin{tabular}{llp{3.4cm}}
-$G$ &  & Size of Target Area\\
-$\gamma$ & & Traffic demand distribution $d$\\
-$S_t$ & $t \in T$ & Coverage area of type t access point\\
-$O_{b,t}$ & $b \in B, t \in T\ binary$ & Channel Occupied by t type access point\\
-$N_b$ & $b \in B\ $ & Available chennel of a band in target area\\
+$G$ &  & Target Area\\
+$\gamma$ & & Traffic Demand Distribution\\
+$p$ & & Coverage Rate\\
+$S_t$ & $t \in T$ & Coverage Area of Type t AP\\
+$O_{b,t}$ & $b \in B, t \in T\ binary$ & Channel Occupied by Type t AP\\
+$N_b$ & $b \in B\ $ & Available chennel of a band in Target Area\\
+$C_t$ & $t \in T$ & Channel capacity of Type t AP\\
 \end{tabular}
 
 
@@ -24,69 +26,33 @@ $N_b$ & $b \in B\ $ & Available chennel of a band in target area\\
 {\bf Variables:}\\
 \\
 %\vspace{1pt}
-\begin{tabular}{llp{3cm}}
-$0\le \alpha_{ij}^b \le 1$  & $b\in B, (i,j) \in N$ & 
-Time share of link $(i,j)$ on band $b$\\ 
-$0\le uy_{i,j,k}^b$ & $(i,j,k) \in V, b \in B$ & 
-Uplink flow of node $k$ on link $(i,j)$ at band $b$ \\ 
-$0\le dy_{i,j,k}^b$ & $(i,j,k) \in N, b \in B$ & 
-Downlink flow of node $k$ on link $(i,j)$ at band $b$ \\ 
+\begin{tabular}{llr}
+$a_t\le0$ & $t \in T$ & Number of Type t AP\\ 
 \end{tabular}
-
-%\vspace{3pt}
-Our objective is to maximize the gateway goodput.
 
 \noindent
 {\bf Objective:}
 \begin{align}
-& Max \sum_i\sum_j\sum_k\sum_b(uy_{i,j,k}^b+dy_{j,i,k}^b) \; When \; w_j=1
+& Min \sum_t a_t
 \end{align}
-
-The constraints for the variables are represented as:  
-%\setcounter{equation}{0}\\
-%\vspace{1pt}
-%Objective:
-%\begin{align}
-%\max \quad
-%& \sum_{i \in N}(\lambda u_i+ \lambda d_i)
-%\end{align}\\
 
 \noindent
 %{\bf Constraints:}
-{\bf Connectivity Constraints:}
+{\bf Coverage Constraint:}
 \begin{align}
-\label{opt:1}
-& \alpha_{i,j}^b + \alpha_{j,i}^b + \sum_l\sum_m(\alpha_{l,m}^b \cdot I_{ij,lm}^b) \leq 1, i\neq j \\
-\label{opt:2}
-& \sum_i uy_{i,j,k}^b + \sum_i dy_{i,j,k}^b \leq r_{j,k}^b \cdot \alpha_{j,k}^b 
+\label{opt:coverage}
+\sum_t a_t\cdot S_t \ge G*p
 \end{align}
 \noindent
-{\bf Uplink Constraints:} 
+{\bf Capacity Constraint:} 
 \begin{align}
-\label{opt:3}
-& \sum_k \sum_b uy_{i,i,k}^b \leq D_{ui} \; When \; w_k=0, i \neq k \\
-\label{opt:4}
-& uy_{i,j,k}^b = 0 w_k=1 \\
-%\label{opt:5}
-%& \sum_i\sum_b uy_{i,j,k}^b - \sum_m\sum_b uy_{j,m,k}^b = 0 \; When \; w_k=0, i\neq k\\
-\label{opt:6}
-& \sum_i\sum_b uy_{i,j,k}^b = \sum_m \sum_b uy_{j,m,k}^b \; When \; w_k=0, i \neq k\\
-\label{opt:7}
-& uy_{i,j,i}^b=0 
+\label{opt:capacity}
+\sum_t a_t\cdot C_t \ge G\cdot \gamma
 \end{align}
 \noindent
-{\bf Downlink Constraints:} 
+{\bf Resource Constraint:} 
 \begin{align}
-{\bf}
-\label{opt:8}
-& \sum_j \sum_b dy_{i,j,i}^b \leq D_{di} \; When \; w_i=0 \\
-\label{opt:9}
-& dy_{i,j,k}^l =0 \; When \; w_k=1 \\
-%\label{opt:10}
-%& \sum_j\sum_b dy_{i,j,k}^b - \sum_m\sum_b dy_{i,k,m}^b \geq , i \neq k \\
-\label{opt:11}
-& \sum_j\sum_b dy_{i,j,k}^b = \sum_m \sum_b dy_{j,m,k}^b,\; When \; w_k=0,  i \neq k \\
-\label{opt:12}
-& dy_{i,i,j}^b=0
+\label{opt:resource}
+\sum_t a_t\cdot O_{b,t} \le N_b
 \end{align}
 

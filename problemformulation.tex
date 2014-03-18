@@ -278,14 +278,74 @@ lower bound.
 \end{figure}
 
 % Relaxed linear program
-Given a target area, service area of all kinds access points subject to capacity constraint, 
-a minimum number of access points could be found through linear program subject to 
-coverage and resource constraints as represent in~\ref{fimxe}. 
+Given a target area $G$ with the traffic demand distribution $\gamma$, the service area 
+of all kinds access points $S_t$, the coverage rate $p$, thus the capacity of access point $C_t$ could 
+be calaculated based on the number of radios, Friis model~\ref{eq:friis} and restriction~\ref{eq:servicearea}
+or from in-field measurement~\cite{cuileveraging}. Furthermore, the minimum number of access points 
+could be found through a relaxed linear program as represent in ~\ref{opt:opt}. 
 
 \input{linear}
 
+The linear program relax the coverage constraint without telling a key parameter
+{\it where should we put the access point?}. Moreover, the linear program may provide 
+multiple results since different type of access points could have the same service area, 
+(e.g. in low traffic demand case) The result of the linear program is the lower bound of 
+access points. 
 
+In order to find a pratical access points deployment in multiband scenario, we represent 
+a greedy local search algorithm in~\ref{alg:gls}. The service area of access points varies 
+from population distribution. Assume the cost of building an access point is the same as $C_a$. 
+Thus, we rank the access points type according to their unit price as:
+
+\begin{equation}
+\label{eq:unitprice}
+p_s=C_a/A_s
+\end{equation}
+
+$A_s=\pi s_r^2$ when a circle coverage model is applied, $A_s = \frac{3\sqrt{3}}{2}$ when a 
+hexagon coverage model is applied. In the framework, the access point type with less unit price 
+is going to deployed first till the available resource is used up. When two types of access points
+share the same unit price, considering the spacial reuse, access point with high frequency channels
+will be chosen. The deployment starts from the edge of the given plane. If the combination of unit 
+grid could be covered by an access point, we put the unit grid in the coverage area, until the access
+point can not access more grid. Then we switch to another available access point. The process is like
+a Teris game, when a given access point is filled, it will be deleted.
 % Algorithm for lower bound approaching
-
+\begin{algorithm}
+\caption{Multiband Hetegeneous AP Deployment}
+\label{alg:gls}
+\begin{algorithmic}[1]
+\REQUIRE  ~~\\
+$G$: Target Area \\
+$\gamma$: Traffic Demand Distribution\\
+$p$: Coverage Rate\\
+$S_t$: Coverage Area of Type t AP \\
+$O_{b,t}$: Channel Occupied by t Type AP\\
+$N_b$: Available channels of a Band in Target Area\\
+$C_t$: Channel Capacity of Type t AP
+\WHILE {$N_{served}=!M$}
+\FORALL {$s \in S_{current}$}
+	\STATE Find one-hop nodes in $S_{Next}$
+	\STATE Sort $S_Next$ according to distance from gateway nodes
+	\FORALL {$l \in S_{Next}$}
+		\STATE Calculate 1-hop path interference of link $s\rightarrow l$
+		\STATE Sort the links according to path interference
+		\STATE Assign(s,l) with the least interference link
+		\STATE Update $N_{served},N_{unserved}$
+		\STATE Update $I_{active}$ from $I$
+	\ENDFOR
+	\STATE $S_{current}=S_{Next}$
+\ENDFOR
+\ENDWHILE
+\STATE Rank available AP type according to their unit price $p_s$
+\STATE Deploy an AP at the left up edge of un-covered area
+\STATE Fill the AP with one neighbor unit grid and move the AP in the center of the coverage area
+\STATE 
+\STATE The coverage radius of a Multiband Access Point is $Min{R_p,R_{QoS}}$
+\STATE Apply regular hexagon deployment to get the number of access point for serving given area $M$
+\ENSURE ~~\\
+The number of Access Points and Deployment\\
+\end{algorithmic}
+\end{algorithm}
 % Algorithm analysis and justify
 
