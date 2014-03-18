@@ -246,14 +246,14 @@ In the low traffic demand scenario, the service radius reaches the radio propaga
 A high frequency WiFi radios will have a smaller service area since the signal attenuate fast; while the white
 space radio could have a larger service area due to the longer propagation; and a hetergenous access point who has
 both WiFi radios and white space radios has the same range of as low frequency radios access point. An example is
-shown in Fig.~\ref{fixme}.
+shown in Fig.~\ref{fig:lowtraffic}.
 % Medium traffic demand case
 In medium traffic demand scenario, hetergenous access points and white space access points will 
 have the same size service area which is larger than high frequency WiFi only access points as shown in 
-~\ref{fixme}.
+~\ref{fig:mediumtraffic}.
 % High traffic demand case
 With high traffic demand, all access points will have the same service area due to capacity constraint 
-as shown in~\ref{fixme}. White space bands could reduce the cost of wireless network deployment. 
+as shown in~\ref{fig:hightraffic}. White space bands could reduce the cost of wireless network deployment. 
 Thus, lowest cost for covering a certain area is to use white space bands in all access points 
 based on the analysis. However, spectrum resource is limited, especially the usability
 of white space bands is restricted in major cities in US~\cite{msdatabase}. 
@@ -266,28 +266,6 @@ The problme is known as a NP-hard problem~\cite{fixme}. We propose a relaxed lin
 get the lower bound of the number of access points and a heuristic algorithm to approach the 
 lower bound.
 
-%
-%\begin{figure}
-%\centering
-%\begin{subfigure}[b]{0.3}
-%\includegraphics[width=25]{figures/lowtraffic}
-%\caption{A gull}
-%\label{fig:gull}
-%\end{subfigure}
-%	\begin{subfigure}[b]{0.3}
-%	\includegraphics[width=25mm]{figures/mediumtraffic}
-%	\caption{A tiger}
-%	\label{fig:tiger}
-%	\end{subfigure}
-%	\begin{subfigure}[b]{0.3}
-%	\includegraphics[width=25mm]{figures/hightraffic}
-%	\caption{A mouse}
-%	\label{fig:mouse}
-%	\end{subfigure}
-%	\caption{Pictures of animals}
-%	\label{fig:animals}
-%	\end{figure}
-%
 
 \begin{figure}
 %\vspace{-0.0in}
@@ -295,7 +273,28 @@ lower bound.
 \includegraphics[width=74mm]{figures/lowtraffic}
 \vspace{-0.1in}
 \caption{Low Traffic Scenario}                                                                 
-\label{fig:drivemap}
+\label{fig:lowtraffic}
+\vspace{-0.1in}
+\end{figure}
+
+\begin{figure}
+%\vspace{-0.0in}
+\centering
+\includegraphics[width=74mm]{figures/mediumtraffic}
+\vspace{-0.1in}
+\caption{Medium Traffic Scenario}                                                                 
+\label{fig:mediumtraffic}
+\vspace{-0.1in}
+\end{figure}
+
+
+\begin{figure}
+%\vspace{-0.0in}
+\centering
+\includegraphics[width=74mm]{figures/hightraffic}
+\vspace{-0.1in}
+\caption{High Traffic Scenario}                                                                 
+\label{fig:hightraffic}
 \vspace{-0.1in}
 \end{figure}
 
@@ -306,7 +305,7 @@ be calaculated based on the number of radios, Friis model~\ref{eq:friis} and res
 or from in-field measurement~\cite{cuileveraging}. When the target area is served, the reward of the area 
 could be knows as a constant number $R$. However, the reward does not influence the optimal deployment since 
 the total reward is a constant. Furthermore, the minimum number of access points could be found through 
-a relaxed linear program as represent in ~\ref{opt:opt}. 
+a relaxed linear program as fllowing. 
 
 \input{linear}
 
@@ -368,5 +367,6 @@ The number of Access Points and Deployment\\
 \end{algorithmic}
 \end{algorithm}
 % Algorithm analysis and justify
+
 Through the algorithm, we could cover the target area by the most efficient access point type
 step by step. The minmum number of access points and a pratical multiband wireless deployment.
