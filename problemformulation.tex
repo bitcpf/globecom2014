@@ -235,7 +235,9 @@ the propagation range and capacity rang could be determined by the environment, 
 power control~\cite{robinson2010deploying}. These factors are out of the scope of this work, but they could
 easily be added to the model for calculation of a hetergenous access point service area. To simplify the 
 problem and focus on multiband, we assume the traffic demand is uniform distributed and the propagation 
-follow Frii rule as Eq.~\ref{eq:friis}.
+follow Frii rule as Eq.~\ref{eq:friis}. When the target area is given, we could get the service area of
+each access point type through~\ref{eq:servicearea}, then we adjust the transmit power of each radio
+to reduce the interference among each other.
 
 % Variation of radios
 When the traffic demand of an area is constant, the degree of a hetergenous access point service area 
@@ -261,10 +263,11 @@ of white space bands is restricted in major cities in US~\cite{msdatabase}.
 Thus, the trade of between centralized using all white space bands or mixed using white space
 bands under multiple traffic demands is a question for wireless network deployment. The problem
 could be modeled as how could we use the minumum number of different sizes of service area according to 
-radio combinations to cover a certain plane area. This problem is a bin package problem~\cite{fixme}.
-The problme is known as a NP-hard problem~\cite{fixme}. We propose a relaxed linear program to 
-get the lower bound of the number of access points and a heuristic algorithm to approach the 
-lower bound.
+radio combinations to cover a certain plane area. This problem is a to deploy different size of cells in 
+a given palen, which is a NP-hard bin package problem~\cite{martello1998exact}. We propose a relaxed 
+linear program to get the lower bound of the number of access points and a heuristic algorithm to 
+approach the lower bound.
+
 
 
 \begin{figure}
@@ -333,11 +336,12 @@ radius $r_2,r_3,\dots r_n$, the reward is uniformly distributee, the hetegenous 
 H_r=(n-1) C_a - \frac{R}{G}\cdot\sum f_s(r_n)
 \end{equation}
 
-$f_s(r)$ is the area calculation functin, e.g. $f_s = \frac{3\sqrt{3}}{2}r^2$ when a 
+$f_s(r)$ is the area calculation function, e.g. $f_s = \frac{3\sqrt{3}}{2}r^2$ when a 
 hexagon coverage model is applied. In the framework, the access point type with more reward 
 is going to deployed first till the available resource is used up. When two types of access points
 share the same unit price, considering the spacial reuse, access point with high frequency channels
-will be chosen. The deployment starts from the edge of the given plane. If the combination of unit 
+will be chosen. The deployment starts from the edge of the given plane and we use protocol model
+to find the available access point type. If the combination of unit 
 grid could be covered by an access point, we put the unit grid in the coverage area, until the access
 point can not access more grid. Then we switch to another available access point. The process is like
 a Teris game, when a given access point is filled, it will be deleted.
@@ -357,6 +361,12 @@ $N_b$: Available channels of a Band in Target Area\\
 $C_t$: Channel Capacity of Type t AP
 \WHILE {$\sum A\cdot S_t < p$}
 \STATE Rank available AP type according to their unit price $H_r$
+\STATE Rank available AP type according to radio numbers
+\IF {The reminder area $G_r$ is larger than all the available AP}
+\STATE Choose the AP has the largest coverage area $S_t$
+\ELSE 
+\STATE Find the available AP type whose coverage area $S_t=min{S_t>G_r}$
+\ENDIF
 \STATE Deploy an AP at the left up edge of un-covered area
 \STATE Fill the AP with one neighbor unit grid and move the AP in the center of the coverage area
 \STATE Update Channel Resource $O_{b,t}, N_b$
@@ -368,5 +378,6 @@ The number of Access Points and Deployment\\
 \end{algorithm}
 % Algorithm analysis and justify
 
+Generally, we employ access point with larger coverage capacity fill in the area, then for the 
 Through the algorithm, we could cover the target area by the most efficient access point type
 step by step. The minmum number of access points and a pratical multiband wireless deployment.

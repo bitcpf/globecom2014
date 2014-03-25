@@ -105,10 +105,24 @@ G.~Rosston, S.~Savage, and D.~Waldman, ``Household demand for broadband
   internet service,'' \emph{Communications of the ACM}, vol.~54, no.~2, pp.
   29--31, 2011.
 
+\bibitem{martello1998exact}
+S.~Martello and D.~Vigo, ``Exact solution of the two-dimensional finite bin
+  packing problem,'' \emph{Management science}, vol.~44, no.~3, pp. 388--399,
+  1998.
+
 \bibitem{cuileveraging}
 P.~Cui, H.~Liu, J.~He, O.~Altintas, R.~Vuyyuru, D.~Rajan, and J.~Camp,
   ``Leveraging diverse propagation and context for multi-modal vehicular
   applications.''
+
+\bibitem{meikle2012global}
+R.~Meikle and J.~Camp, ``A global measurement study of context-based
+  propagation and user mobility,'' in \emph{Proceedings of the 4th ACM
+  international workshop on Hot topics in planet-scale measurement}.\hskip 1em
+  plus 0.5em minus 0.4em\relax ACM, 2012, pp. 21--26.
+
+\bibitem{googledatabase}
+``Google spectrum database,'' \url{http://goo.gl/NnIFXQ}, 2013.
 
 \bibitem{fccwhitespace}
 ``Fcc white space,'' \url{http://www.fcc.gov/topic/white-space}, 2012.
