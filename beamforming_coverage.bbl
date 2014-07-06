@@ -1,0 +1,77 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\def\UrlFont{\rmfamily}
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{andersen1995propagation}
+J.~B. Andersen, T.~S. Rappaport, and S.~Yoshida, ``Propagation measurements and
+  models for wireless communications channels,'' \emph{{IEEE Communications
+  Magazine}}, vol.~33, no.~1, pp. 42--49, 1995.
+
+\bibitem{friis}
+H.~T. Friis, ``A note on a simple transmission formula,'' vol.~34, no.~5, pp.
+  254--256, May 1946.
+
+\bibitem{rappaport}
+T.~Rappaport, \emph{Wireless Communications, Principles \& Practice}.\hskip 1em
+  plus 0.5em minus 0.4em\relax Prentice Hall, 1996.
+
+\bibitem{winters2006smart}
+J.~H. Winters, ``Smart antenna techniques and their application to wireless ad
+  hoc networks,'' \emph{Wireless Communications, IEEE}, vol.~13, no.~4, pp.
+  77--83, 2006.
+
+\bibitem{bazan2012survey}
+O.~Bazan and M.~Jaseemuddin, ``A survey on mac protocols for wireless adhoc
+  networks with beamforming antennas,'' \emph{Communications Surveys \&
+  Tutorials, IEEE}, vol.~14, no.~2, pp. 216--239, 2012.
+
+\bibitem{robinson2010deploying}
+J.~Robinson, M.~Singh, R.~Swaminathan, and E.~Knightly, ``Deploying mesh nodes
+  under non-uniform propagation,'' in \emph{{IEEE INFOCOM}}, 2010.
+
+\bibitem{msdatabase}
+``Microsoft research white space database,''
+  \url{http://whitespaces.cloudapp.net/Default.aspx}, 2013.
+
+\bibitem{franklin2007node}
+A.~A. Franklin and C.~S.~R. Murthy, ``Node placement algorithm for deployment
+  of two-tier wireless mesh networks,'' in \emph{Global Telecommunications
+  Conference, 2007. GLOBECOM'07. IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2007, pp. 4823--4827.
+
+\bibitem{si2010overview}
+W.~Si, S.~Selvakennedy, and A.~Y. Zomaya, ``An overview of channel assignment
+  methods for multi-radio multi-channel wireless mesh networks,'' \emph{Journal
+  of Parallel and Distributed Computing}, vol.~70, no.~5, pp. 505--524, 2010.
+
+\bibitem{gupta2000capacity}
+P.~Gupta and P.~R. Kumar, ``The capacity of wireless networks,'' \emph{{IEEE
+  Trans. on Information Theory}}, vol.~46, no.~2, pp. 388--404, 2000.
+
+\bibitem{rosston2011household}
+G.~Rosston, S.~Savage, and D.~Waldman, ``Household demand for broadband
+  internet service,'' \emph{Communications of the ACM}, vol.~54, no.~2, pp.
+  29--31, 2011.
+
+\bibitem{tang2005interference}
+J.~Tang, G.~Xue, and W.~Zhang, ``Interference-aware topology control and {QoS}
+  routing in multi-channel wireless mesh networks,'' in \emph{{ACM MobiHoc}},
+  2005.
+
+\end{thebibliography}

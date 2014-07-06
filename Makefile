@@ -1,5 +1,5 @@
-BASE = centervsdis
-SRC = linear.tex centervsdis.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex centervsdis.bib 
+BASE = beamforming_coverage
+SRC = beamforming_coverage.tex problemformulation.tex experiment.tex conclusion.tex abstract.tex introduction.tex related.tex beamforming_coverage.bib 
 
 all: $(BASE).ps 
 b: $(BASE).bbl
