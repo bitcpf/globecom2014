@@ -3,52 +3,53 @@ The top-level auxiliary file: beamforming_coverage.aux
 The style file: IEEEtran.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: beamforming_coverage.bib
-Warning--I didn't find a database entry for ""
 -- IEEEtran.bst version 1.00 (2002/08/13) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in friis
+Warning--empty journal in cuimeasurement
+Warning--empty year in cuimeasurement
 
 Done.
-You've used 12 entries,
+You've used 35 entries,
             3917 wiz_defined-function locations,
-            856 strings with 8832 characters,
-and the built_in function-call counts, 8574 in all, are:
-= -- 707
-> -- 168
-< -- 81
-+ -- 95
-- -- 25
-* -- 417
-:= -- 1329
-add.period$ -- 25
-call.type$ -- 12
-change.case$ -- 11
-chr.to.int$ -- 177
-cite$ -- 13
-duplicate$ -- 626
-empty$ -- 678
-format.name$ -- 33
-if$ -- 1954
+            973 strings with 12984 characters,
+and the built_in function-call counts, 26783 in all, are:
+= -- 2192
+> -- 651
+< -- 254
++ -- 361
+- -- 107
+* -- 1323
+:= -- 4021
+add.period$ -- 72
+call.type$ -- 35
+change.case$ -- 34
+chr.to.int$ -- 570
+cite$ -- 38
+duplicate$ -- 1947
+empty$ -- 2031
+format.name$ -- 138
+if$ -- 6136
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 103
-newline$ -- 56
-num.names$ -- 11
-pop$ -- 220
+int.to.str$ -- 35
+missing$ -- 333
+newline$ -- 125
+num.names$ -- 33
+pop$ -- 741
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 661
+skip$ -- 2022
 stack$ -- 0
-substring$ -- 424
-swap$ -- 515
-text.length$ -- 22
+substring$ -- 1363
+swap$ -- 1628
+text.length$ -- 64
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
-warning$ -- 1
-while$ -- 42
-width$ -- 14
-write$ -- 134
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 124
+width$ -- 37
+write$ -- 357
+(There were 3 warnings)
